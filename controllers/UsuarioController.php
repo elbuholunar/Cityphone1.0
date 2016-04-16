@@ -32,7 +32,7 @@
 		    $this->_telMovil       = $telMovil;			
 		}
 
-		public function login()
+		public function loginValidated()
 		{
 			# Campos a traer de la tabla
 			$campos = array('id','userName','password');
@@ -41,8 +41,30 @@
 
 			# Campos que se incluyen en la validacion WHERE DE LA SQL
 			$field['userName'] = $this->_userName;
-			$field['password'] = $pw;
 			$register = Usuario::findCustom($campos, $field);
+
+			# Validación nombre usuario en BD
+			if (empty($register)) {
+				$json_error = array('success' => 'error', 'error' => 'error1');
+				$success = json_encode($json_error);
+				$url     = '../views/users/login.php?success='.$success;
+				header('location:'.$url);
+			}
+			else{
+				# pw que se obtiene de BD
+				$pw_DB = $register[0]->getPassword();
+
+				# Validacion coincidencia de contraseñas
+				if ($pw !== $pw_DB) {
+					$json_error = array('success' => 'error', 'error' => 'error2');
+					$success = json_encode($json_error);
+					$url     = '../views/users/login.php?success='.$success;
+					header('location:'.$url);
+
+				}
+
+
+			}
 
 		}
 	}
@@ -81,12 +103,12 @@
 			# code...
 			break;
 		case 'login':
-				$obj_usuarioController->login();
+				$obj_usuarioController->loginValidated();
 			break;
 		default:
 
 			break;
 	}
 
-
+//http://web.ontuts.com/tutoriales/aprendiendo-a-utilizar-la-libreria-curl-en-php/
  ?>

@@ -36,16 +36,16 @@
     },
     "Errors":{
     	"Spanish":{
-    		"error1":"valor",
-    		"error2":"valor"
+    		"error1":"el suario no esta registrado!",
+    		"error2":"El nombre de usuario y contraseña no coinciden!"
     	},
     	"English":{
-    		"error1":"valor",
-    		"error2":"valor"
+    		"error1":"the ser Unrecorded this!",
+    		"error2":"The username and password do not match !"
     	},
     	"French":{
-    		"error1":"valor",
-    		"error2":"valor"
+    		"error1":"le ser Unrecorded cela!",
+    		"error2":"Le nom d'utilisateur et mot de passe ne correspondent pas !"
     	}
     }
 }

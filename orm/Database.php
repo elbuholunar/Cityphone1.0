@@ -106,4 +106,3 @@ class Database {
         $this->provider->disconnect();
     }
 }
-?>
