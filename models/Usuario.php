@@ -12,19 +12,31 @@
 		private $telFijo;
 		private $telMovil;
 		private $estado;
+		protected static $table = 'usuario';
 
-		Public function __Construct($id,$nombre,$apellido,$tipoUsuario,$userName,$password,$email,$telFijo,$telMovil,$estado){
-			$this->id = $id;
-			$this->nombre = $nombre;
-			$this->apellido = $apellido;
-			$this->tipoUsuario = $tipoUsuario;
-			$this->userName = $userName;
-			$this->password = $password;
-			$this->email = $email;
-			$this->telFijo = $telFijo;
-			$this->telMovil = $telMovil;
-			$this->estado = $estado;
+		Public function __Construct($data){
+			
+	        parent::__construct();
+
+	        if ($data && sizeof($data)) {
+	            $this->populateFromRow($data);
+	        }
 		}
+
+
+	    private function populateFromRow($data) {
+	        $this->id          = isset($data['id']) ? $data['id'] : null;
+	        $this->nombre      = isset($data['nombre']) ? $data['nombre'] : null;
+	        $this->apellido    = isset($data['apellido']) ? $data['apellido'] : null;
+	        $this->tipoUsuario = isset($data['tipoUsuario']) ? $data['tipoUsuario'] : null;
+	        $this->userName    = isset($data['userName']) ? $data['userName'] : null;
+	        $this->password    = isset($data['password']) ? $data['password'] : null;
+	        $this->email       = isset($data['email']) ? $data['email'] : null;
+	        $this->telFijo     = isset($data['telFijo']) ? $data['telFijo'] : null;
+	        $this->telMovil    = isset($data['telMovil']) ? $data['telMovil'] : null;
+	        $this->estado      = isset($data['estado']) ? $data['estado'] : null;
+	    }
+
 		public function getId(){
 			return $this->id;
 		}
@@ -71,7 +83,6 @@
 
 		}
 		Protected function crearUsuario(){
-			echo "hola inmundo";
 			return true;
 		}
 		Protected function actualizarUsuario(){

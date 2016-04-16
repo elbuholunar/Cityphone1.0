@@ -1,7 +1,5 @@
 <?php
 
-require_once ('../config/params.php');
-
 class ORM {  
     private static $database;
     protected static $table;
@@ -97,6 +95,6 @@ class ORM {
             }
         }
         return $obj;
-    }    
+    }
 }
 ?>

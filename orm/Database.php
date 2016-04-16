@@ -1,9 +1,12 @@
 <?php
+require_once 'MysqlProvider.php';
+
 class Database {  
     private $provider;
     private $params;
     private static $_con;
     public function __construct($provider, $host, $user, $pass, $db) {
+        
         if (!class_exists($provider)) {
             throw new Exception("The provider doesn't exists or it wasn't implemented");
         }

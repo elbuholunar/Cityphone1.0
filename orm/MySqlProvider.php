@@ -1,8 +1,12 @@
 <?php
-require_once ('DatabaseProvider.php');  
+require_once ('DatabaseProvider.php');
+require_once ('../config/params.php');
+ 
 class MySqlProvider extends DatabaseProvider {  
     public function connect($host, $user, $pass, $dbname) {
+
         $this->resource = new mysqli($host, $user, $pass, $dbname);
+        var_dump($this->resource);
         if ($this->resource->connect_errno) {
             // Connection fails
             error_log($this->resource->connect_error);
