@@ -1,5 +1,7 @@
 <?php 
-	Class Usuario {
+	require_once ('../orm/ORM.php');
+
+	Class Usuario extends ORM{
 		private $id;
 		private $nombre;
 		private $apellido;
@@ -69,6 +71,7 @@
 
 		}
 		Protected function crearUsuario(){
+			echo "hola inmundo";
 			return true;
 		}
 		Protected function actualizarUsuario(){
