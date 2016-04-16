@@ -1,51 +1,69 @@
 {
-    "languages": {
-        "Spanish": {
-            "buttons": {
-                "sesion": "Iniciar Sesión",
-                "Who": "Quienes Somos?",
-                "ContactUs": "Contactenos",
-                "search": "Termino a Buscar",
-                "buttonSearch": "Buscar",
-                "logOut": "Cerrar Sesión",
-                "Configurations": "Configuración"
-            }
-        }
+  "languages": {
+    "Spanish": {
+      "buttons": {
+        "sesion": "Iniciar Sesión",
+        "about": "Quienes Somos?",
+        "ContactUs": "Contactenos",
+        "search": "Termino a Buscar",
+        "buttonSearch": "Buscar",
+        "logOut": "Cerrar Sesión",
+        "Configurations": "Configuración",
+        "title":"SISTEMA DE CITOFONIA VIRTUAL",
+        "subtitle":"Con el Respaldo de Estecnología",
+        "createUser":"Nuevo usuario",
+        "showUsers":"Ver usuarios",
+        "updateUser":"Modificar Usuarios",
+        "deleteUser":"Eliminar Usuario"
+      }
     },
     "English": {
-        "buttons": {
-            "sesion": "Login",
-            "Who": "Quienes Somos?",
-            "ContactUs": "Contactenos",
-            "search": "Termino a Buscar",
-            "buttonSearch": "Buscar",
-            "logOut": "logout",
-            "Configurations": "Configuración"
-        }
+      "buttons": {
+        "sesion": "Login",
+        "about": "about us?",
+        "ContactUs": "Contact Us",
+        "search": "Search",
+        "buttonSearch": "Search",
+        "logOut": "logout",
+        "Configurations": "Configuration",
+        "title":"INTERNAL PHONE SYSTEM VIRTUAL",
+        "subtitle":"Backed by Estecnología",
+        "createUser":"New User",
+        "showUsers":"Show user",
+        "updateUser":"User Update",
+        "deleteUser":"Delete User"
+      }
     },
     "French": {
-        "buttons": {
-            "sesion": "s'identifier",
-            "Who": "Quienes Somos?",
-            "ContactUs": "contact",
-            "search": "Termino a Buscar",
-            "buttonSearch": "Buscar",
-            "logOut": "se déconnecter",
-            "Configurations": "Configuración"
-        }
-    },
-    "Errors":{
-    	"Spanish":{
-    		"error1":"valor",
-    		"error2":"valor"
-    	},
-    	"English":{
-    		"error1":"valor",
-    		"error2":"valor"
-    	},
-    	"French":{
-    		"error1":"valor",
-    		"error2":"valor"
-    	}
+      "buttons": {
+        "sesion": "Identifier",
+        "about": "Qui sommes nous?",
+        "ContactUs": "Contact",
+        "search": "Je termine à la recherche",
+        "buttonSearch": "Recherche",
+        "logOut": "Se déconnecter",
+        "Configurations": "Configuration",
+        "title":"TÉLÉPHONE INTERNE VIRTUELLE",
+        "subtitle":"Soutenu par Estecnología",
+        "createUser":"Nouvel utilisateur",
+        "showUsers":"Afficher les utilisateurs",
+        "updateUser":"Mise à jour de l'utilisateur",
+        "deleteUser":"supprimer l'utilisateur"
+      }
     }
+  },
+  "Errors": {
+    "Spanish": {
+      "1": "valor",
+      "2": "valor"
+    },
+    "English": {
+      "1": "valor",
+      "2": "valor"
+    },
+    "French": {
+      "1": "valor",
+      "2": "valor"
+    }
+  }
 }
