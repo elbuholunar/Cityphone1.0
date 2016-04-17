@@ -11,7 +11,6 @@
 	<script type="text/javascript" src="../../libraries/js/js_bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/manageJson.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/users/principal.css">
-	
 </head>
 <body>
 <nav class="navbar navbar-default size-default">
@@ -81,20 +80,12 @@
 		</div>		
 	</div>
 </header>
-	
-
-
-
-
-
 <div class="general-content">
 	
 </div>
 <footer>
 	<div class="footer">
-		
 	</div>
-	
 </footer>
 </body>
 </html>
