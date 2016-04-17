@@ -1,11 +1,10 @@
 <?php
-
 $archParms = file_get_contents("../../config/params.json");
 $lenguajes = json_decode($archParms, true);
 $captura_error = json_decode($_GET['success']);
 
 $error = $captura_error->error;
-$print_error = $lenguajes['Errors']['Spanish'][$error];
+$print_error = $lenguajes['Errors'][$_COOKIE['lan']][$error];
 ?>
 
 <div id="divErrors" class="modal fade" tabindex="-1" role="dialog">

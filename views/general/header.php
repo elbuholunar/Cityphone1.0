@@ -9,6 +9,8 @@
 	<link href="../../css/css_bootstrap/bootstrap-theme.css" rel="stylesheet" media="screen">
 	<script type="text/javascript" src="../../libraries/js/jquery/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="../../libraries/js/js_bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../../js/changeLanguage.js"></script>
+	<script type="text/javascript" src="../../js/manageJson.js"></script>
 	<style type="text/css">
 		body {	
 			background-image: url(../../resources/images/fondo3.jpg);
@@ -81,52 +83,7 @@
 		}
 		
 	</style>
-	<script type="text/javascript">
-		var languages = [];
-		function lee_json() {
-            $.getJSON("../../config/params.json", function(datos) {            	
-            	languages = datos["languages"];  
-            	var len = "Spanish";             
-                //$.each(datos["languages"], function(idx,primo) {
-                   
-                //});
-               changeLanguages(len);
-            });
-        }
-        lee_json();
-
-		$(function(){
-			$(".btn-languages").click(function lenguage(){				
-				var button = this.alt;
-				var len = ""
-				if(button == "es-co"){
-					len = "Spanish"					
-				}else if(button == "en-us"){
-					len = "English"
-				}else{
-					len = "French"
-				}
-               changeLanguages(len);				
-			});
-
-		});
-
-		function changeLanguages(len){
-			// Dar valores a los botones de acuerdo al lenguaje
-				$("#quien").html(languages[len]["buttons"]["about"]);
-				$("#contactenos").html(languages[len]["buttons"]["ContactUs"]);	
-				$("#buscar").prop("placeholder",languages[len]["buttons"]["search"]);
-				$("#btnBuscar").html(languages[len]["buttons"]["buttonSearch"]);
-				$("#configuracion").html(languages[len]["buttons"]["Configurations"]);
-				$("#sesion").html(languages[len]["buttons"]["sesion"]);
-				$("#titulo").html(languages[len]["buttons"]["title"]);
-				$("#subtitulo").html(languages[len]["buttons"]["subtitle"]);
-				$("#crear").html(languages[len]["buttons"]["createUser"]);
-				$("#actualizar").html(languages[len]["buttons"]["showUsers"]);
-				$("#ver").html(languages[len]["buttons"]["updateUser"]);
-				$("#eliminar").html(languages[len]["buttons"]["deleteUser"]);
-		}
-	</script>
+	
 </head>
 <body>
 <nav class="navbar navbar-default size-default">
@@ -170,7 +127,7 @@
       	<li><a href="#"><img src="../../resources/images/Es.png" class="btn-languages" alt="es-co" id="uno"></a></li>
       	<li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
       	<li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
-        <li><a href="#" id="sesion">Link</a></li>
+        <li><a href="../users/login.php" id="sesion">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="configuracion">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
