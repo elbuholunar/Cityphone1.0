@@ -55,7 +55,7 @@
       	<li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
       	<li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
         <li><a href="../users/login.php" id="sesion" class="changeLanguages"><font id="sesion" class="changeLanguages">Link</font></a></li>
-        <li class="dropdown">
+        <!--li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><font id="Configurations" class="changeLanguages">Dropdown</font> <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#" ><font id="createUser" class="changeLanguages" >Action</font></a></li>
@@ -64,7 +64,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="#" ><font id="deleteUser" class="changeLanguages" >Separated link</font></a></li>
           </ul>
-        </li>
+        </li-->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

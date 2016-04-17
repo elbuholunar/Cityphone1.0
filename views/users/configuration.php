@@ -55,7 +55,7 @@
       	<li><a href="#"><img src="../../resources/images/Es.png" class="btn-languages" alt="es-co" id="uno"></a></li>
       	<li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
       	<li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
-        <li><a href="../users/login.php" id="sesion" class="changeLanguages"><font id="sesion" class="changeLanguages">Link</font></a></li>
+        <li><a href="../general/header.php" ><font id="logOut" class="changeLanguages">Link</font></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><font id="Configurations" class="changeLanguages">Dropdown</font> <span class="caret"></span></a>
           <ul class="dropdown-menu">
