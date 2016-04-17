@@ -14,7 +14,12 @@
         "createUser":"Nuevo usuario",
         "showUsers":"Ver usuarios",
         "updateUser":"Modificar Usuarios",
-        "deleteUser":"Eliminar Usuario"
+        "deleteUser":"Eliminar Usuario",
+        "usernameLabel":"Nombre Usuario:",
+        "username":"Nombre de Usuario",
+        "passwordLabel":"Contraseña:",
+        "password":"Contraseña",
+        "btnLogin":"Ingresar"
       }
     },
     "English": {
@@ -31,7 +36,12 @@
         "createUser":"New User",
         "showUsers":"Show user",
         "updateUser":"User Update",
-        "deleteUser":"Delete User"
+        "deleteUser":"Delete User",
+        "usernameLabel":"Username:",
+        "username":"Username",
+        "passwordLabel":"Password:",
+        "password":"Password",
+        "btnLogin":"Login"
       }
     },
     "French": {
@@ -48,7 +58,12 @@
         "createUser":"Nouvel utilisateur",
         "showUsers":"Afficher les utilisateurs",
         "updateUser":"Mise à jour de l'utilisateur",
-        "deleteUser":"supprimer l'utilisateur"
+        "deleteUser":"supprimer l'utilisateur",
+        "usernameLabel":"Nom d'utilisateur:",
+        "username":"Nom d'utilisateur",
+        "passwordLabel":"mot de passe:",
+        "password":"mot de passe",
+        "btnLogin":"s'identifier"
       }
     }
   },
