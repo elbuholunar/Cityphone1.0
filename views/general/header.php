@@ -81,9 +81,7 @@
 			-moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.78);
 			box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.78);
 		}
-		
 	</style>
-	
 </head>
 <body>
 <nav class="navbar navbar-default size-default">
@@ -153,20 +151,12 @@
 		</div>		
 	</div>
 </header>
-	
-
-
-
-
-
 <div class="general-content">
 	
 </div>
 <footer>
 	<div class="footer">
-		
 	</div>
-	
 </footer>
 </body>
 </html>
