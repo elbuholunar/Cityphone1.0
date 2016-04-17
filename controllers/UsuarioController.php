@@ -43,6 +43,14 @@
 			$field['userName'] = $this->_userName;
 			$register = Usuario::findCustom($campos, $field);
 
+		    $url = "http://www.example.com/login";  
+		    $postData = array("user" => "usuario", "password" => "test");  
+		    /*Convierte el array en el formato adecuado para cURL*/  
+		    $elements = array();  
+		    foreach ($postData as $name=>$value) {  
+		       $elements[] = "{$name}=".urlencode($value);  
+		    }  
+
 			# Validación nombre usuario en BD
 			if (empty($register)) {
 				$json_error = array('success' => 'error', 'error' => 'error1');
@@ -63,9 +71,7 @@
 
 				}
 
-
 			}
-
 		}
 	}
 
@@ -111,4 +117,5 @@
 	}
 
 //http://web.ontuts.com/tutoriales/aprendiendo-a-utilizar-la-libreria-curl-en-php/
+//http://www.forosdelweb.com/f18/aporte-file_get_contents-curl-http_request-724214/
  ?>
