@@ -49,8 +49,7 @@
 				$success = json_encode($json_error);
 				$url     = '../views/users/login.php?success='.$success;
 				header('location:'.$url);
-			}
-			else{
+			}else{
 				# pw que se obtiene de BD
 				$pw_DB = $register[0]->getPassword();
 
@@ -61,6 +60,9 @@
 					$url     = '../views/users/login.php?success='.$success;
 					header('location:'.$url);
 
+				}else{
+					$url     = '../views/users/configuration.php';
+					header('location:'.$url);
 				}
 
 
