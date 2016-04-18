@@ -42,7 +42,7 @@ body {
 		.general-content {
 			margin-top: 4px !important;					
 			width:90%;
-			height: 500px;
+			height: 650px;
 			margin: 0 auto;
 			background-color: #F2F2F2;
 			-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -51,6 +51,7 @@ body {
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
 			border-radius: 5px;
+			margin-bottom: 50px;
 		}
 		.size-default {
 			width: 90%;
@@ -66,4 +67,13 @@ body {
     		-webkit-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.78);
 			-moz-box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.78);
 			box-shadow: 0px 0px 20px -1px rgba(0,0,0,0.78);
+		}
+		.center-obj {
+			text-align: center;
+		}
+		.margintop-30 {
+			margin-top: 30px;
+		}
+		.paddintop-20 {
+			padding-top: 20px;
 		}
