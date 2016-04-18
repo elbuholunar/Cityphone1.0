@@ -3,6 +3,8 @@ require_once ('DatabaseProvider.php');
 require_once ('../config/params.php');
  
 class MySqlProvider extends DatabaseProvider {  
+    # Ver por que no hace la herencia
+
     public function connect($host, $user, $pass, $dbname) {
 
         $this->resource = new mysqli($host, $user, $pass, $dbname);
@@ -26,8 +28,9 @@ class MySqlProvider extends DatabaseProvider {
     }
     public function numRows($resource) {
         $num_rows = 0;
+
         if ($resource) {
-            $num_rows = $resource->num_rows;
+            @$num_rows = $resource->num_rows;
         }
         return $num_rows;
     }

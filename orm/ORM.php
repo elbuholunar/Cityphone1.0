@@ -43,9 +43,12 @@ class ORM {
         }
         return $objs;
     }
-    public function save() {
-        $values = get_object_vars($this);
+    public function save($data_modelo) {
+        //$values = get_object_vars($this);
+        $values = $data_modelo;
+
         $filtered = null;
+
         foreach ($values as $key => $value) {
             if ($value !== null && $value !== '' && strpos($key, 'obj_') === false && $key !== 'id') {
                 if ($value === false) {

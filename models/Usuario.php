@@ -3,6 +3,8 @@
 
 	Class Usuario extends ORM{
 		private $id;
+		private $tipoIdentificacion;
+		private $identificacion;
 		private $nombre;
 		private $apellido;
 		private $tipoUsuario;
@@ -25,16 +27,18 @@
 
 
 	    private function populateFromRow($data) {
-	        $this->id          = isset($data['id']) ? $data['id'] : null;
-	        $this->nombre      = isset($data['nombre']) ? $data['nombre'] : null;
-	        $this->apellido    = isset($data['apellido']) ? $data['apellido'] : null;
-	        $this->tipoUsuario = isset($data['tipoUsuario']) ? $data['tipoUsuario'] : null;
-	        $this->userName    = isset($data['userName']) ? $data['userName'] : null;
-	        $this->password    = isset($data['password']) ? $data['password'] : null;
-	        $this->email       = isset($data['email']) ? $data['email'] : null;
-	        $this->telFijo     = isset($data['telFijo']) ? $data['telFijo'] : null;
-	        $this->telMovil    = isset($data['telMovil']) ? $data['telMovil'] : null;
-	        $this->estado      = isset($data['estado']) ? $data['estado'] : null;
+	        $this->id          			= isset($data['id']) ? $data['id'] : null;
+	        $this->tipoIdentificacion   = isset($data['tipoIdentificacion']) ? $data['tipoIdentificacion'] : null;
+	        $this->identificacion      	= isset($data['identificacion']) ? $data['identificacion'] : null;
+	        $this->nombre      			= isset($data['nombre']) ? $data['nombre'] : null;
+	        $this->apellido    			= isset($data['apellido']) ? $data['apellido'] : null;
+	        $this->tipoUsuario 			= isset($data['tipoUsuario']) ? $data['tipoUsuario'] : null;
+	        $this->userName    			= isset($data['userName']) ? $data['userName'] : null;
+	        $this->password    			= isset($data['password']) ? $data['password'] : null;
+	        $this->email       			= isset($data['email']) ? $data['email'] : null;
+	        $this->telFijo     			= isset($data['telFijo']) ? $data['telFijo'] : null;
+	        $this->telMovil    			= isset($data['telMovil']) ? $data['telMovil'] : null;
+	        $this->estado      			= isset($data['estado']) ? $data['estado'] : null;
 	    }
 
 		public function getId(){
@@ -67,30 +71,34 @@
 		public function getEstado(){
 			return $this->estado;
 		}
-
-		Protected function cambioEstado($newEstado){
+		public function cambioEstado($newEstado){
 			$this->estado = $newEstado;
 			actualizarUsuario();
 			return true;
 		}
-		Protected function cambioPassword($oldPassword,$newPassword){
+		public function cambioPassword($oldPassword,$newPassword){
 			if($oldPassword == $this->password){
 				$this->password = $newPassword;
 				actualizarUsuario();
 				return true;
 			}	
 			return false;
-
 		}
-		Protected function crearUsuario(){
+		public function crearUsuario($data_modelo){
+			$this->save($data_modelo);
+		}
+		public function actualizarUsuario(){
 			return true;
 		}
-		Protected function actualizarUsuario(){
+		public function eliminarUsuario(){
 			return true;
 		}
-		Protected function eliminarUsuario(){
-			return true;
+		public function __set($propiedad,$valor) {
+		        $this->$propiedad=$valor;
 		}
+		public function __get($propiedad) {
+		        return $this->$propiedad;
+		}				
 	}
 
 ?>

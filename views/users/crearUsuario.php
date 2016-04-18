@@ -94,8 +94,21 @@
       <div class="col-md-10 col-xd-10 well">        
         <form action="../../controllers/UsuarioController.php" class="form-horizontal" method="POST">
           <div class="form-group">            
+              <label for="tpoIde" id="tpoIdeLabel" class="changeLanguages col-sm-2">Tipo Identificación:</label>
+              <div class="col-sm-10"><select name="tipoIdentificacion" id="tpoIde" class="form-control" required="required">
+                <option value="">Seleccionar</option>
+                <option value="1">Cedula</option>
+                <option value="2">Cedula Extranjera</option>
+                <option value="3">Tarjeta de Identidad</option>
+              </select> </div>         
+          </div>
+          <div class="form-group">            
+              <label for="Ide" id="IdeLabel" class="changeLanguages col-sm-2">Identificación:</label>
+              <div class="col-sm-10"><input type="text" name="identificacion" id="Ide" placeholder="Identificación" class="form-control changeLanguages"/> </div>         
+          </div>
+          <div class="form-group">            
               <label for="name" id="nameLabel" class="changeLanguages col-sm-2">Nombre:</label>
-              <div class="col-sm-10"><input type="text" name="name" id="name" placeholder="Nombre de Usuario" class="form-control changeLanguages"/> </div>         
+              <div class="col-sm-10"><input type="text" name="nombre" id="name" placeholder="Nombre de Usuario" class="form-control changeLanguages"/> </div>         
           </div>
           <div class="form-group">            
               <label for="apellido" id="apellidoLabel" class="col-sm-2 changeLanguages">Apellido:</label>
@@ -104,7 +117,7 @@
           <div class="form-group">            
               <label for="tipo" id="tipoLabel" class="col-sm-2 changeLanguages">Tipo de Usuario:</label>
               <div class="col-sm-10">
-                <select name="tipo" id="tipo" placeholder="Tipo de Usuario" class="form-control changeLanguages"/>    
+                <select name="tipoUsuario" id="tipo" placeholder="Tipo de Usuario" class="form-control changeLanguages"/>    
                   <option value="1">Usuario</option>
                   <option value="2">Editor</option>
                   <option value="3">Adminstrador</option>
@@ -114,7 +127,7 @@
           </div>
           <div class="form-group">            
               <label for="userName" id="usernameLabel" class="col-sm-2 changeLanguages">Nombre Usuario:</label>
-              <div class="col-sm-10"><input type="text" name="username" id="username" placeholder="Nombre de Usuario" class="form-control changeLanguages"/>      </div>       
+              <div class="col-sm-10"><input type="text" name="userName" id="username" placeholder="Nombre de Usuario" class="form-control changeLanguages"/>      </div>       
           </div>
           <div class="form-group">            
               <label for="password" id="passwordLabel" class="col-sm-2 changeLanguages">Contraseña:</label>
@@ -139,7 +152,7 @@
           <div class="form-group">            
               <label for="text" id="estadoLabel" class="col-sm-2 changeLanguages">Estado:</label>
               <div class="col-sm-10">
-                <select name="estado" id="estado" placeholder="Contraseña" class="form-control changeLanguages"/>   
+                <select name="estado" id="estado" class="form-control changeLanguages"/>   
                   <option value="1">En Espera</option>                  
                   <option value="2">Inactivo</option>
                   <option value="3">Suspendido</option>
@@ -150,7 +163,7 @@
               </div>       
           </div>
           <div >        
-              <input type="hidden" name="event" id="event" value='{"action":"login"}' class="form-control"/>
+              <input type="hidden" name="event" id="event" value='{"action":"crear"}' class="form-control"/>
               <input type="submit" value="Crear Usuario" id="btnCrear" class="btn btn-default changeLanguages"/>     
           </div>
         </form>
@@ -167,3 +180,16 @@
 </footer>
 </body>
 </html>
+
+<?php
+  if (!empty($_COOKIE['success'])) {
+
+    $captura_cookie = json_decode($_COOKIE['success']);
+    $state = $captura_cookie->success;
+
+    if ($state == 'success')
+      require_once '../../modals/success.php';
+    else
+      require_once '../../modals/error.php';
+  }
+?>  
