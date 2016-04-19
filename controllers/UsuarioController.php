@@ -132,7 +132,7 @@
 				$data_modelo['tipoUsuario']        = $this->_tipoUsuario;
 				$data_modelo['userName']           = $this->_userName;
 				$data_modelo['password']		   = $this->_objCrypt->encrypt($this->_password);
-				$data_modelo['estad']        	   = $this->_estado;
+				$data_modelo['estado']        	   = $this->_estado;
 
 				$insercion = $this->_objUsuario->save($data_modelo);
 
@@ -175,6 +175,34 @@
 					break;			
 			}
 		}
+
+		public function leerData()
+		{
+			$usuarios =  array();
+
+			$usuariosBD = usuario::all();
+
+			foreach ($usuariosBD as $obj) {
+				
+				if ($obj->estado == 1) $estado = 'En espera';
+				elseif ($obj->estado == 2) $estado = 'Inactivo';
+				elseif ($obj->estado == 3) $estado = 'Suspendido';
+				elseif ($obj->estado == 4) $estado = 'Bloqueado';
+				elseif ($obj->estado == 5) $estado = 'Cambio de Contraseña';
+				elseif ($obj->estado == 6) $estado = 'Activo';
+
+				$usuarios['usuarios'][$obj->id] =
+					array(
+						'identificacion' => $obj->identificacion,
+						'nombre'         => $obj->nombre,
+						'apellido'       => $obj->apellido,
+						'estado'         => $obj->estado,
+						'estado_text'    => $estado
+					);
+
+			}
+			echo json_encode($usuarios);
+		}
 	}
 
 	
@@ -195,7 +223,7 @@
 
 	
 	$event = json_decode($_POST['event']);
-	
+
 	switch ($event->action) {
 		case 'crear':
 			$obj_usuarioController->crearUsuario();
@@ -210,7 +238,7 @@
 			break;
 
 		case 'leer':
-			# code...
+				$obj_usuarioController->leerData();
 			break;
 		case 'login':
 				$obj_usuarioController->loginValidated();

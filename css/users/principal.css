@@ -42,7 +42,7 @@ body {
 		.general-content {
 			margin-top: 4px !important;					
 			width:90%;
-			height: 650px;
+			/*height: 650px;*/
 			margin: 0 auto;
 			background-color: #F2F2F2;
 			-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);

@@ -10,7 +10,29 @@
 	<script type="text/javascript" src="../../libraries/js/jquery/jquery-2.2.3.min.js"></script>
 	<script type="text/javascript" src="../../libraries/js/js_bootstrap/bootstrap.min.js"></script>
 	<script type="text/javascript" src="../../js/manageJsonConf.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/users/principal.css">	
+	<link rel="stylesheet" type="text/css" href="../../css/users/principal.css">
+  <script type="text/javascript">
+      function cargue_doc(){
+        
+        $.post("../../controllers/UsuarioController.php",{event:'{"action":"leer"}'}, function(data, status){
+
+          $('#dataUsers tr').remove();
+          
+          $.each(data['usuarios'], function(obj, subObj){
+
+            body_tr = '<tr>';
+            body_tr += '<td>' + subObj['identificacion'] + '</td>';
+            body_tr += '<td>' + subObj['nombre'] + '</td>';
+            body_tr += '<td>' + subObj['apellido'] + '</td>';
+            body_tr += '<td>' + subObj['estado_text'] +'</td>';
+            body_tr += '</tr>';
+
+            $("#dataUsers").append(body_tr);
+          });
+
+        },"json");
+      }
+  </script>
 </head>
 <body>
 <nav class="navbar navbar-default size-default">
@@ -88,95 +110,126 @@
 
 <div class="general-content">
 <h3 class="center-obj paddintop-20"><font id="title3" class="changeLanguages">CREAR NUEVO USUARIO</font></h3>
-	<div class="container-fluid" >   
-    <div class="row" >
-      <div class="col-md-1 col-xd-1"></div> 
-      <div class="col-md-10 col-xd-10 well">        
-        <form action="../../controllers/UsuarioController.php" class="form-horizontal" method="POST">
-          <div class="form-group">            
-              <label for="tpoIde" id="tpoIdeLabel" class="changeLanguages col-sm-2">Tipo Identificación:</label>
-              <div class="col-sm-10"><select name="tipoIdentificacion" id="tpoIde" class="form-control" required="required">
-                <option value="">Seleccionar</option>
-                <option value="1">Cedula</option>
-                <option value="2">Cedula Extranjera</option>
-                <option value="3">Tarjeta de Identidad</option>
-              </select> </div>         
+<div class="container-fluid" >
+  <div>
+    <ul id="myTabs" class="nav nav-tabs" role="tablist"> 
+      <li role="presentation" class="">
+        <a href="#home" class="active" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" onclick="">Crear Usuarios</a>
+      </li> 
+      <li role="presentation">
+        <a aria-expanded="false" href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" onclick="cargue_doc()">Listado Usuarios</a>
+      </li> 
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div role="tabpanel" class="tab-pane fade fade active in" id="home" aria-labelledby="home-tab">
+        <br>
+        <div class="row" >
+          <div class="col-md-1 col-xd-1"></div> 
+          <div class="col-md-10 col-xd-10 well">     
+            <form action="../../controllers/UsuarioController.php" class="form-horizontal" method="POST">
+              <div class="form-group">            
+                  <label for="tpoIde" id="tpoIdeLabel" class="changeLanguages col-sm-2">Tipo Identificación:</label>
+                  <div class="col-sm-10">
+                    <select name="tipoIdentificacion" id="tpoIde" class="form-control" required="required">
+                      <option value="">Seleccionar</option>
+                      <option value="1">Cedula</option>
+                      <option value="2">Cedula Extranjera</option>
+                      <option value="3">Tarjeta de Identidad</option>
+                    </select>
+                  </div>         
+              </div>
+              <div class="form-group">            
+                  <label for="Ide" id="IdeLabel" class="changeLanguages col-sm-2">Identificación:</label>
+                  <div class="col-sm-10"><input type="text" name="identificacion" id="Ide" placeholder="Identificación" class="form-control changeLanguages"/> </div>         
+              </div>
+              <div class="form-group">            
+                  <label for="name" id="nameLabel" class="changeLanguages col-sm-2">Nombre:</label>
+                  <div class="col-sm-10"><input type="text" name="nombre" id="name" placeholder="Nombre de Usuario" class="form-control changeLanguages"/> </div>         
+              </div>
+              <div class="form-group">            
+                  <label for="apellido" id="apellidoLabel" class="col-sm-2 changeLanguages">Apellido:</label>
+                  <div class="col-sm-10"><input type="text" name="apellido" id="apellido" placeholder="Nombre de Usuario" class="form-control changeLanguages"/>  </div>           
+              </div>
+              <div class="form-group">            
+                  <label for="tipo" id="tipoLabel" class="col-sm-2 changeLanguages">Tipo de Usuario:</label>
+                  <div class="col-sm-10">
+                    <select name="tipoUsuario" id="tipo" placeholder="Tipo de Usuario" class="form-control changeLanguages"/>    
+                      <option value="1">Usuario</option>
+                      <option value="2">Editor</option>
+                      <option value="3">Adminstrador</option>
+                      <option value="4">Super Administrador</option>
+                    </select> 
+                  </div>        
+              </div>
+              <div class="form-group">            
+                  <label for="userName" id="usernameLabel" class="col-sm-2 changeLanguages">Nombre Usuario:</label>
+                  <div class="col-sm-10"><input type="text" name="userName" id="username" placeholder="Nombre de Usuario" class="form-control changeLanguages"/>      </div>       
+              </div>
+              <div class="form-group">            
+                  <label for="password" id="passwordLabel" class="col-sm-2 changeLanguages">Contraseña:</label>
+                  <div class="col-sm-10"><input type="password" name="password" id="password" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
+              </div>
+              <div class="form-group">            
+                  <label for="password2" id="password2Label" class="col-sm-2 changeLanguages">Repita la Contraseña:</label>
+                  <div class="col-sm-10"><input type="password" name="password2" id="password2" placeholder="Contraseña" class="form-control changeLanguages"/>  </div>           
+              </div>
+              <div class="form-group">            
+                  <label for="email" id="emailLabel" class="col-sm-2 changeLanguages">Correo Electrónico:</label>
+                  <div class="col-sm-10"><input type="text" name="email" id="email" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
+              </div>
+              <div class="form-group">            
+                  <label for="telFijo" id="telFijoLabel" class="col-sm-2 changeLanguages">Téléfono Fijo:</label>
+                  <div class="col-sm-10"><input type="text" name="telFijo" id="telFijo" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
+              </div>
+              <div class="form-group">            
+                  <label for="telMovil" id="telMovilLabel" class="col-sm-2 changeLanguages">Teléfono Movil:</label>
+                  <div class="col-sm-10"><input type="text" name="telMovil" id="telMovil" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
+              </div>
+              <div class="form-group">            
+                  <label for="text" id="estadoLabel" class="col-sm-2 changeLanguages">Estado:</label>
+                  <div class="col-sm-10">
+                    <select name="estado" id="estado" class="form-control changeLanguages"/>   
+                      <option value="1">En Espera</option>                  
+                      <option value="2">Inactivo</option>
+                      <option value="3">Suspendido</option>
+                      <option value="4">Bloqueado</option>
+                      <option value="5">Cambio de Contraseña</option>
+                      <option value="6">Activo</option>
+                    </select>   
+                  </div>       
+              </div>
+              <div class="col-sm-12">        
+                  <input type="hidden" name="event" id="event" value='{"action":"crear"}' class="form-control"/>
+                  <input type="submit" value="Crear Usuario" id="btnCrear" class="btn btn-primary pull-right changeLanguages" />     
+              </div>
+            </form>
           </div>
-          <div class="form-group">            
-              <label for="Ide" id="IdeLabel" class="changeLanguages col-sm-2">Identificación:</label>
-              <div class="col-sm-10"><input type="text" name="identificacion" id="Ide" placeholder="Identificación" class="form-control changeLanguages"/> </div>         
-          </div>
-          <div class="form-group">            
-              <label for="name" id="nameLabel" class="changeLanguages col-sm-2">Nombre:</label>
-              <div class="col-sm-10"><input type="text" name="nombre" id="name" placeholder="Nombre de Usuario" class="form-control changeLanguages"/> </div>         
-          </div>
-          <div class="form-group">            
-              <label for="apellido" id="apellidoLabel" class="col-sm-2 changeLanguages">Apellido:</label>
-              <div class="col-sm-10"><input type="text" name="apellido" id="apellido" placeholder="Nombre de Usuario" class="form-control changeLanguages"/>  </div>           
-          </div>
-          <div class="form-group">            
-              <label for="tipo" id="tipoLabel" class="col-sm-2 changeLanguages">Tipo de Usuario:</label>
-              <div class="col-sm-10">
-                <select name="tipoUsuario" id="tipo" placeholder="Tipo de Usuario" class="form-control changeLanguages"/>    
-                  <option value="1">Usuario</option>
-                  <option value="2">Editor</option>
-                  <option value="3">Adminstrador</option>
-                  <option value="4">Super Administrador</option>
-                </select> 
-              </div>        
-          </div>
-          <div class="form-group">            
-              <label for="userName" id="usernameLabel" class="col-sm-2 changeLanguages">Nombre Usuario:</label>
-              <div class="col-sm-10"><input type="text" name="userName" id="username" placeholder="Nombre de Usuario" class="form-control changeLanguages"/>      </div>       
-          </div>
-          <div class="form-group">            
-              <label for="password" id="passwordLabel" class="col-sm-2 changeLanguages">Contraseña:</label>
-              <div class="col-sm-10"><input type="password" name="password" id="password" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
-          </div>
-          <div class="form-group">            
-              <label for="password2" id="password2Label" class="col-sm-2 changeLanguages">Repita la Contraseña:</label>
-              <div class="col-sm-10"><input type="password" name="password2" id="password2" placeholder="Contraseña" class="form-control changeLanguages"/>  </div>           
-          </div>
-          <div class="form-group">            
-              <label for="email" id="emailLabel" class="col-sm-2 changeLanguages">Correo Electrónico:</label>
-              <div class="col-sm-10"><input type="text" name="email" id="email" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
-          </div>
-          <div class="form-group">            
-              <label for="telFijo" id="telFijoLabel" class="col-sm-2 changeLanguages">Téléfono Fijo:</label>
-              <div class="col-sm-10"><input type="text" name="telFijo" id="telFijo" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
-          </div>
-          <div class="form-group">            
-              <label for="telMovil" id="telMovilLabel" class="col-sm-2 changeLanguages">Teléfono Movil:</label>
-              <div class="col-sm-10"><input type="text" name="telMovil" id="telMovil" placeholder="Contraseña" class="form-control changeLanguages"/>     </div>        
-          </div>
-          <div class="form-group">            
-              <label for="text" id="estadoLabel" class="col-sm-2 changeLanguages">Estado:</label>
-              <div class="col-sm-10">
-                <select name="estado" id="estado" class="form-control changeLanguages"/>   
-                  <option value="1">En Espera</option>                  
-                  <option value="2">Inactivo</option>
-                  <option value="3">Suspendido</option>
-                  <option value="4">Bloqueado</option>
-                  <option value="5">Cambio de Contraseña</option>
-                  <option value="6">Activo</option>
-                </select>   
-              </div>       
-          </div>
-          <div >        
-              <input type="hidden" name="event" id="event" value='{"action":"crear"}' class="form-control"/>
-              <input type="submit" value="Crear Usuario" id="btnCrear" class="btn btn-default changeLanguages"/>     
-          </div>
-        </form>
-      </div>  
-      <div class="col-md-4 col-xd-1"></div> 
+          <div class="col-md-4 col-xd-1"></div> 
+        </div> 
+      </div>
+      <div role="tabpanel" class="tab-pane" id="profile" aria-labelledby="profile-tab">
+        <br>
+        <div class="well">
+          <table class="table table-hover table-bordered">
+            <thead>
+              <tr class="text-primary">
+                <th>Identificación</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="dataUsers">
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div> 
   </div>
 </div>
 <footer>
 	<div class="footer">
-		
 	</div>
-	
 </footer>
 </body>
 </html>
