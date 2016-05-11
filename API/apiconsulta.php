@@ -6,7 +6,7 @@
         if($format == 'json') {
             header('Content-type: application/json');
             echo json_encode(array('success'=>"success",
-            						'prueba'=>"¡Hola, porque tan bola!"
+            						'prueba'=>htmlentities("¡Hola, porque tan bola!")
             	));
         }
 
