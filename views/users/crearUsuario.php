@@ -1,3 +1,7 @@
+<?php 
+  require_once ('../../libraries/php/Simple_sessions.php');
+  $obj_Session = new Simple_sessions();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,18 +77,18 @@
         <input type="submit" class="btn btn-default changeLanguages" id="buttonSearch" value="Buscar">
       </form>
       <ul class="nav navbar-nav navbar-right">
-      	<li><a href="#"><img src="../../resources/images/Es.png" class="btn-languages" alt="es-co" id="uno"></a></li>
-      	<li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
-      	<li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
-        <li><a href="../general/header.php" ><font id="logOut" class="changeLanguages">Link</font></a></li>
+        <li><a href="#"><img src="../../resources/images/Es.png" class="btn-languages" alt="es-co" id="uno"></a></li>
+        <li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
+        <li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
+        <li><a href="../users/login.php" id="sesion" class="changeLanguages"><font id="sesion" class="changeLanguages">Link</font></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><font id="Configurations" class="changeLanguages">Dropdown</font> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="crearUsuario.php"><font id="createUser" class="changeLanguages">Action</font></a></li>
-            <li><a href="#"><font id="updateUser" class="changeLanguages">Another action</font></a></li>
-            <li><a href="#"><font id="showUsers" class="changeLanguages">Something else here</font></a></li>
+            <li><a href="#" id="createUser" class="changeLanguages">Action</a></li>
+            <li><a href="#" id="updateUser" class="changeLanguages">Another action</a></li>
+            <li><a href="#" id="showUsers" class="changeLanguages">Something else here</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><font id="deleteUser" class="changeLanguages">Separated link</font></a></li>
+            <li><a href="#" id="deleteUser" class="changeLanguages">Separated link</a></li>
           </ul>
         </li>
       </ul>
@@ -92,22 +96,111 @@
   </div><!-- /.container-fluid -->
 </nav>
 <header>
-	<div class="header">
-		<div class="titutlo shadow-text">
-			<h1><font id="title" class="changeLanguages">SISTEMA DE CITOFONIA VIRTUAL</font></h1>
-			<h3><font id="subtitle" class="changeLanguages">Con el Respaldo de Estecnología</font></h3>
-		</div>
-		<div class="logo">
-			<img src="../../resources/images/logovp.png">
-		</div>		
-	</div>
+  <div class="header">
+    <div class="titutlo shadow-text">
+      <h1><font id="title" class="changeLanguages">SISTEMA DE CITOFONIA VIRTUAL</font></h1>
+      <h3><font id="subtitle" class="changeLanguages">Con el Respaldo de Estecnología</font></h3>
+    </div>
+    <div class="logo">
+      <img src="../../resources/images/logovp.png">
+    </div>    
+  </div>
 </header>
-	
+  
 
 
 
 
 
+<<<<<<< HEAD
+<div class="general-content" style="padding: 25px 25px;">
+  <form action="../../controllers/UsuarioController.php" method="POST" role="form" method="post">
+    <legend>Creación Usuario</legend>
+    <!--FILA 1-->
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Tipo Identificación</label>
+            <select name="tipoIdentificacion" id="inputTipoIdentificacion" class="form-control" required="required">
+              <option value="">Seleccinar</option>
+              <option value="1">Cedula</option>
+              <option value="2">Cedula Extranjera</option>
+              <option value="3">Tarjeta Identidad</option>
+            </select>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Identificacion</label>
+            <input type="text" name="identificacion" class="form-control" id="" placeholder="..." required="required">
+        </div>       
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+    </div>
+    <!--FILA 2-->
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Nombres</label>
+            <input type="text" name="nombre" class="form-control" id="" placeholder="..." required="required">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Apellidos</label>
+            <input type="text" name="apellido" class="form-control" id="" placeholder="..." required="required">
+        </div>       
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+    </div>
+    <!--FILA 3-->
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <label for="">Telefono Fijo</label>
+          <input type="text" name="telFijo" class="form-control" value="" placeholder="..." required="required">
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+          <label for="">Telefono Movil</label>
+          <input type="text" name="telMovil" class="form-control" value="" placeholder="..." required="required">
+        </div>       
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>                
+    </div>
+    <!--FILA 4-->
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Correo</label>
+            <input type="text" name="email" class="form-control" value="" placeholder="..." required="required"> 
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Tipo de usuario</label>
+            <select name="tipoUsuario" id="input" class="form-control" required="required">
+              <option value="">Seleccinar</option>
+              <option value="1">Administrador</option>
+              <option value="2">usuario</option>
+            </select>
+        </div>       
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>                
+    </div>
+    <!--FILA 5-->
+    <div class="row">
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3">
+            <label for="">Estado</label>
+            <select name="estado" id="input" class="form-control" required="required">
+              <option value="">Seleccinar</option>
+              <option value="1">Estado 1</option>
+              <option value="2">Estado 2</option>
+              <option value="3">Estado 3</option>
+            </select>
+        </div>
+        <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-3"></div>       
+        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-3"></div>                
+    </div>
+    <!--FILA 5-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <input type="hidden" name="event" id="event" value='{"action":"crear"}' class="form-control"/>
+          <input type="submit" value="Registrar" class="btn btn-primary pull-right btn-lg btn-block">          
+        </div>                
+    </div>       
+  </form>
+=======
 <div class="general-content">
 <h3 class="center-obj paddintop-20"><font id="title3" class="changeLanguages">CREAR NUEVO USUARIO</font></h3>
 <div class="container-fluid" >
@@ -226,10 +319,20 @@
       </div>
     </div> 
   </div>
+>>>>>>> origin/master
 </div>
+
+
 <footer>
+<<<<<<< HEAD
+  <div class="footer">
+    
+  </div>
+  
+=======
 	<div class="footer">
 	</div>
+>>>>>>> origin/master
 </footer>
 </body>
 </html>
