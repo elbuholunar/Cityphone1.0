@@ -179,11 +179,7 @@
 	<div class="footer">
 		
 	</div>
-<<<<<<< HEAD
 
-=======
-	
->>>>>>> parent of ed2beeb... modificacion en el modulo de creacion
 </footer>
 </body>
 </html>
