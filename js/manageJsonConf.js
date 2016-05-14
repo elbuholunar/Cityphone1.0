@@ -44,17 +44,24 @@
 		}
 
 		function lee_json() {
+						
 			if(document.cookie != ""){
-            		var cook = document.cookie.split("=");
-            		var len = cook[1]; 
-            		changeLanguages(len);
-            	}else{ 
-				    changeLanguages("Spanish");
-            	}   
+            		var cookiess = document.cookie.split(';');
+            		for(var index in cookiess) {				
+   						 if( /lan/.test(cookiess[index]) ){
+            				var cook = cookiess[index].split("=");
+            				var len = cook[1];             				 
+            			}
+					}  		
+            }else{ 
+				    var len = "Spanish";
+            }  
+            //console.log("en leer json.. " + len);
+            changeLanguages(len); 
         }
-        lee_json();
+       
 
-		$(function(){
+		$(function(){			
 			$(".btn-languages").click(function lenguage(){				
 				var button = this.alt;
 				var len = ""
@@ -70,3 +77,6 @@
 			});
 
 		});
+
+		// Invoca el metodo para cargar o crear la cookie
+		lee_json();

@@ -15,19 +15,41 @@
 				});
 		}
 
-		function lee_json() {
+		/*function lee_json() {
+			console.log("en leer json");
             $.getJSON("../../config/params.json", function(datos) {  
-            	languages = datos["languages"];             	
-            	if(document.cookie != ""){
+            	languages = datos["languages"]; 
+
+            	if(document.cookie != ""){            		
             		var cook = document.cookie.split("=");
-            		var len = cook[1];            		
+            		var len = cook[1];   
+            		console.log(len);         		
             	}else{            		 
             		var len = "Spanish";
             	} 
                	changeLanguages(len);
             });
-        }
-        lee_json();
+        } */
+        function lee_json() {
+			console.log("en leer json..");			
+			if(document.cookie != ""){
+            		var cookiess = document.cookie.split(';');
+            		for(var index in cookiess) {				
+   						 if( /lan/.test(cookiess[index]) ){
+            				var cook = cookiess[index].split("=");
+            				var len = cook[1]; 
+            				//console.log("len: " + len);
+            				//changeLanguages(len); 
+            			}
+					}  		
+            	}else{ 
+            		console.log("len: " + "Spanish");
+            		//var len = "Spanish";
+				    //changeLanguages("Spanish");
+            	} 
+            	console.log("len: " + len);  
+            	changeLanguages(len);
+        }      
 
 		$(function(){
 			$(".btn-languages").click(function lenguage(){				
@@ -45,3 +67,5 @@
 			});
 
 		});
+
+		 lee_json();

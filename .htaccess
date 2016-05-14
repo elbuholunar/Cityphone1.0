@@ -4,4 +4,4 @@
  RewriteCond %{REQUEST_FILENAME} !-f  
  RewriteCond %{REQUEST_FILENAME} !-l  
  RewriteRule ^(.+)$ apiconsulta.php?url=$1 [QSA,NC,L] 
-
+ 
