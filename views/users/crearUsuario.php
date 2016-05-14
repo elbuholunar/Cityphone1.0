@@ -1,7 +1,3 @@
-<?php 
-  require_once ('../../libraries/php/Simple_sessions.php');
-  $obj_Session = new Simple_sessions();
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -55,18 +51,18 @@
         <input type="submit" class="btn btn-default changeLanguages" id="buttonSearch" value="Buscar">
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><img src="../../resources/images/Es.png" class="btn-languages" alt="es-co" id="uno"></a></li>
-        <li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
-        <li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
-        <li><a href="../users/login.php" id="sesion" class="changeLanguages"><font id="sesion" class="changeLanguages">Link</font></a></li>
+      	<li><a href="#"><img src="../../resources/images/Es.png" class="btn-languages" alt="es-co" id="uno"></a></li>
+      	<li><a href="#"><img src="../../resources/images/En.png" class="btn-languages" alt="en-us"></a></li>
+      	<li><a href="#"><img src="../../resources/images/Fr.png" class="btn-languages" alt="fr"></a></li>
+        <li><a href="../general/header.php" ><font id="logOut" class="changeLanguages">Link</font></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><font id="Configurations" class="changeLanguages">Dropdown</font> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#" id="createUser" class="changeLanguages">Action</a></li>
-            <li><a href="#" id="updateUser" class="changeLanguages">Another action</a></li>
-            <li><a href="#" id="showUsers" class="changeLanguages">Something else here</a></li>
+            <li><a href="crearUsuario.php"><font id="createUser" class="changeLanguages">Action</font></a></li>
+            <li><a href="#"><font id="updateUser" class="changeLanguages">Another action</font></a></li>
+            <li><a href="#"><font id="showUsers" class="changeLanguages">Something else here</font></a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#" id="deleteUser" class="changeLanguages">Separated link</a></li>
+            <li><a href="#"><font id="deleteUser" class="changeLanguages">Separated link</font></a></li>
           </ul>
         </li>
       </ul>
@@ -74,19 +70,17 @@
   </div><!-- /.container-fluid -->
 </nav>
 <header>
-  <div class="header">
-    <div class="titutlo shadow-text">
-      <h1><font id="title" class="changeLanguages">SISTEMA DE CITOFONIA VIRTUAL</font></h1>
-      <h3><font id="subtitle" class="changeLanguages">Con el Respaldo de Estecnología</font></h3>
-    </div>
-    <div class="logo">
-      <img src="../../resources/images/logovp.png">
-    </div>    
-  </div>
+	<div class="header">
+		<div class="titutlo shadow-text">
+			<h1><font id="title" class="changeLanguages">SISTEMA DE CITOFONIA VIRTUAL</font></h1>
+			<h3><font id="subtitle" class="changeLanguages">Con el Respaldo de Estecnología</font></h3>
+		</div>
+		<div class="logo">
+			<img src="../../resources/images/logovp.png">
+		</div>		
+	</div>
 </header>
-  
-
-
+	
 
 
 
@@ -266,13 +260,10 @@
   </div>
 
 </div>
-
-
 <footer>
 
-  <div class="footer">
-    
-  </div>
+	<div class="footer">
+	</div>
 
 </footer>
 </body>
