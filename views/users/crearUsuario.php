@@ -20,11 +20,16 @@
           
           $.each(data['usuarios'], function(obj, subObj){
 
+            btn_edit = '<a href="javascript:void(0)" onclick="alert()"><span class="glyphicon glyphicon-pencil"></span></a>';
+
+            btn_del  = '<a href="javascript:void(0)" onclick="alert()"><span class="glyphicon glyphicon-remove"></span></a>';
+
             body_tr = '<tr>';
             body_tr += '<td>' + subObj['identificacion'] + '</td>';
             body_tr += '<td>' + subObj['nombre'] + '</td>';
             body_tr += '<td>' + subObj['apellido'] + '</td>';
             body_tr += '<td>' + subObj['estado_text'] +'</td>';
+            body_tr += '<td>' + btn_edit + ' ' +btn_del +'</td>';
             body_tr += '</tr>';
 
             $("#dataUsers").append(body_tr);
@@ -53,18 +58,6 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="#" > <font id="about" class="changeLanguages">quien</font> <span class="sr-only">(current)</span></a></li>
         <li><a href="#" ><font id="ContactUs" class="changeLanguages">Contacto</font></a></li>
-        <!--li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li-->
       </ul>
       <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
@@ -103,21 +96,15 @@
 	</div>
 </header>
 	
-
-
-
-
-
 <div class="general-content">
-<h3 class="center-obj paddintop-20"><font id="title3" class="changeLanguages">CREAR NUEVO USUARIO</font></h3>
 <div class="container-fluid" >
   <div>
     <ul id="myTabs" class="nav nav-tabs" role="tablist"> 
       <li role="presentation" class="">
-        <a href="#home" class="active" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" onclick="">Crear Usuarios</a>
+        <a href="#home" class="active" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true" onclick=""><font id="title3" class="changeLanguages">Crear Usuarios</font></a>
       </li> 
       <li role="presentation">
-        <a aria-expanded="false" href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" onclick="cargue_doc()">Listado Usuarios</a>
+        <a aria-expanded="false" href="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" onclick="cargue_doc()"><font id="title4" class="changeLanguages">Listado Usuarios</font></a>
       </li> 
     </ul>
     <div id="myTabContent" class="tab-content">
@@ -131,10 +118,10 @@
                   <label for="tpoIde" id="tpoIdeLabel" class="changeLanguages col-sm-2">Tipo Identificación:</label>
                   <div class="col-sm-10">
                     <select name="tipoIdentificacion" id="tpoIde" class="form-control" required="required">
-                      <option value="">Seleccionar</option>
-                      <option value="1">Cedula</option>
-                      <option value="2">Cedula Extranjera</option>
-                      <option value="3">Tarjeta de Identidad</option>
+                      <option value="" id="optIdent0" class="changeLanguages">Seleccionar</option>
+                      <option value="1" id="optIdent1" class="changeLanguages">Cedula</option>
+                      <option value="2" id="optIdent2" class="changeLanguages">Cedula Extranjera</option>
+                      <option value="3" id="optIdent3" class="changeLanguages">Tarjeta de Identidad</option>
                     </select>
                   </div>         
               </div>
@@ -154,10 +141,10 @@
                   <label for="tipo" id="tipoLabel" class="col-sm-2 changeLanguages">Tipo de Usuario:</label>
                   <div class="col-sm-10">
                     <select name="tipoUsuario" id="tipo" placeholder="Tipo de Usuario" class="form-control changeLanguages"/>    
-                      <option value="1">Usuario</option>
-                      <option value="2">Editor</option>
-                      <option value="3">Adminstrador</option>
-                      <option value="4">Super Administrador</option>
+                      <option value="1" id="optTpoUser1" class="changeLanguages">Usuario</option>
+                      <option value="2" id="optTpoUser2" class="changeLanguages">Editor</option>
+                      <option value="3" id="optTpoUser3" class="changeLanguages">Adminstrador</option>
+                      <option value="4" id="optTpoUser4" class="changeLanguages">Super Administrador</option>
                     </select> 
                   </div>        
               </div>
@@ -189,12 +176,12 @@
                   <label for="text" id="estadoLabel" class="col-sm-2 changeLanguages">Estado:</label>
                   <div class="col-sm-10">
                     <select name="estado" id="estado" class="form-control changeLanguages"/>   
-                      <option value="1">En Espera</option>                  
-                      <option value="2">Inactivo</option>
-                      <option value="3">Suspendido</option>
-                      <option value="4">Bloqueado</option>
-                      <option value="5">Cambio de Contraseña</option>
-                      <option value="6">Activo</option>
+                      <option value="1" id="optState1" class="changeLanguages">En espera</option>                  
+                      <option value="2" id="optState2" class="changeLanguages">Inactivo</option>
+                      <option value="3" id="optState3" class="changeLanguages">Suspendido</option>
+                      <option value="4" id="optState4" class="changeLanguages">Bloqueado</option>
+                      <option value="5" id="optState5" class="changeLanguages">Cambio de Contraseña</option>
+                      <option value="6" id="optState6" class="changeLanguages">Activo</option>
                     </select>   
                   </div>       
               </div>
@@ -213,10 +200,11 @@
           <table class="table table-hover table-bordered">
             <thead>
               <tr class="text-primary">
-                <th>Identificación</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
-                <th>Estado</th>
+                <th id="headListUser1" class="changeLanguages">Identificación</th>
+                <th id="headListUser2" class="changeLanguages">Nombres</th>
+                <th id="headListUser3" class="changeLanguages">Apellidos</th>
+                <th id="headListUser4" class="changeLanguages">Estado</th>
+                <th id="headListUser5" class="changeLanguages">Acciones</th>
               </tr>
             </thead>
             <tbody id="dataUsers">

@@ -18,6 +18,7 @@
         "passwordLabel":"Contraseña:",
         "password":"Contraseña",
         "title3":"CREAR NUEVO USUARIO",
+        "title4":"LISTA USUARIOS",
         "nameLabel":"Nombres:",
         "name":"Nombres",
         "apellidoLabel":"Apellidos:",
@@ -34,6 +35,29 @@
         "telMovil":"Teléfono Movil",
         "estadoLabel":"Estado del Usuario:",
         "estado":"Estado del Usuario",
-        "btnCrear":"Crear Usuario"
+        "btnCrear":"Crear Usuario",
+        "tpoIdeLabel":"Tipo identificación:",
+        "IdeLabel":"Identificación:",
+        "Ide":"Identificación",
+        "optIdent0":"Seleccionar",
+        "optIdent1":"Cedula",
+        "optIdent2":"Cedula Extranjera",
+        "optIdent3":"Tarjeta de Identidad",
+        "optTpoUser1":"Usuario",
+        "optTpoUser2":"Editor",
+        "optTpoUser3":"Administrador",
+        "optTpoUser4":"Super Administrador",
+        "optState1":"En espera",
+        "optState2":"Inactivo",
+        "optState3":"Suspendido",
+        "optState4":"Bloqueado",
+        "optState5":"Cambio de Contraseña",
+        "optState6":"Activo",
+        "headListUser1":"Identificación",
+        "headListUser2":"Nombres",
+        "headListUser3":"Apellidos",
+        "headListUser4":"Estado",
+        "headListUser5":"Acciones"
+
     }
 }
