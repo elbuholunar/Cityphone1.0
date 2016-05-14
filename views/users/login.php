@@ -45,7 +45,7 @@
 		</div> 
 	</div>
 	<?php
-		if (!empty($_GET['success'])) {
+		if (!empty($_COOKIE['success'])) {
 			require_once '../../modals/error.php';
 		}
 	?>	
