@@ -14,9 +14,16 @@
 	<link rel="stylesheet" type="text/css" href="../../css/users/principal.css">
 </head>
 <body>
-<nav class="navbar navbar-default size-default">
+<?php  
+  $head = 2;
+  require_once("../general/header.php");
+
+?>
+  
+
+<!--nav class="navbar navbar-default size-default">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
+    
     <div class="navbar-header" >
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -26,7 +33,7 @@
       </button>
       <a class="navbar-brand" href="#">VirtualPhone</a>
     </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
+
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#" > <font id="about" class="changeLanguages">quien</font> <span class="sr-only">(current)</span></a></li>
@@ -54,9 +61,10 @@
           </ul>
         </li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
+
 <header>
 	<div class="header">
 		<div class="titutlo shadow-text">
@@ -67,7 +75,8 @@
 			<img src="../../resources/images/logovp.png">
 		</div>		
 	</div>
-</header>
+</header-->
+
 <div class="general-content">
 <div class="container-fluid" >
   <div>
