@@ -57,6 +57,8 @@
         "headListUser2":"Des noms",
         "headListUser3":"nom de famille",
         "headListUser4":"Etat",
-        "headListUser5":"Actes"
+        "headListUser5":"Actes",
+        "fontEditUser":"Modifier",
+        "fontDeltUser":"Supprimer"
     }
 }

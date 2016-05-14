@@ -57,6 +57,8 @@
         "headListUser2":"Names",
         "headListUser3":"Last name",
         "headListUser4":"State",
-        "headListUser5":"Actions"
+        "headListUser5":"Actions",
+        "fontEditUser":"Edit",
+        "fontDeltUser":"Del"
     }
 }

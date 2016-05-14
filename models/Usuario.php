@@ -24,8 +24,6 @@
 	            $this->populateFromRow($data);
 	        }
 		}
-
-
 	    private function populateFromRow($data) {
 	        $this->id          			= isset($data['id']) ? $data['id'] : null;
 	        $this->tipoIdentificacion   = isset($data['tipoIdentificacion']) ? $data['tipoIdentificacion'] : null;
@@ -40,7 +38,6 @@
 	        $this->telMovil    			= isset($data['telMovil']) ? $data['telMovil'] : null;
 	        $this->estado      			= isset($data['estado']) ? $data['estado'] : null;
 	    }
-
 		public function getId(){
 			return $this->id;
 		}
