@@ -30,11 +30,15 @@
 
     }
 
-
+    /**
+     *  Estructura de ejemplo de metodo
+     *  @author Alvaro Bernal
+     *  @param {Array} Datos a procesar
+     *  @return {Object Json} success or error 
+     */
     function prueba($string1){
         //http://localhost/cityphonev1.0/api/prueba/uno=gepeto/dos=es gay
-        global $err;   
-       
+        global $err;  
         // campos a validar separados por comas sin espacios, si falta o sobra algun parametro devulve error//
         $campos = "uno,dos";
         if(count($string1) != 2 || implode(",",array_keys($string1)) != $campos){            
