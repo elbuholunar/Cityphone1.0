@@ -13,6 +13,7 @@
         "showUsers":"Ver usuarios",
         "updateUser":"Modificar Usuarios",
         "deleteUser":"Eliminar Usuario",
+        "configsUsers":"Configuración",
         "usernameLabel":"Nombre Usuario:",
         "username":"Nombre de Usuario",
         "passwordLabel":"Contraseña:",

@@ -1,11 +1,41 @@
 function Actions_Admon() {
 
+	this.createUser = function(){
+		$("#form_editAdd_user")[0].reset();
+		$('#event').val('{"action":"crear"}');
+		$('#ModalForm').modal();
+	};
+
 	this.editUser = function(id_user){
-		alert(id_user);
+		
+        $.post("../../controllers/UsuarioController.php",{event:'{"action":"leerUser"}',id: id_user}, function(data, status){
+
+          $.each(data['usuario'], function(obj, subObj){
+
+          		$("input[name=identificacion]").val(subObj.identificacion);
+          		$("input[name=nombre]").val(subObj.nombre);
+          		$("input[name=apellido]").val(subObj.apellido);
+          		$("input[name=userName]").val(subObj.userName);
+          		$("input[name=email]").val(subObj.email);
+          		$("input[name=telFijo]").val(subObj.telFijo);
+          		$("input[name=telMovil]").val(subObj.telMovil);
+
+          		$('select[name=tipoIdentificacion] option:eq('+ subObj.tipoIdentificacion +')').prop('selected', true);
+          		$('select[name=tipoUsuario] option:eq('+ subObj.tipoUsuario +')').prop('selected', true);
+          		$('select[name=estado] option:eq('+ subObj.estado +')').prop('selected', true);
+          });
+
+        },"json");			
+
+		$('#event').val('{"action":"editar"}');
+		$('#ModalForm').modal();
 	};
 
 	this.delUser = function(id_user){
-		alert("eliminar usuario" + id_user);
+		
+		if (confirm('Esta seguro de eliminar el usuario!')) {
+
+		}
 	};
 
 	this.cargue_doc = function(){
@@ -36,10 +66,8 @@ function Actions_Admon() {
 
             $("#dataUsers").append(body_tr);
           });
-
         },"json");		
 	};
-
 }
 
 var objActAdmon = new Actions_Admon();

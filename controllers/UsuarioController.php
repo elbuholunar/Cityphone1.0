@@ -81,7 +81,7 @@
 					$obj_Session = new Simple_sessions();
 					$obj_Session->add_sess($data_session);
 
-					header('location:../views/users/crearUsuario.php');
+					header('location:../views/users/usuarios.php');
 				}
 			}
 		}
@@ -139,22 +139,22 @@
 				if (!$insercion['error']) {
 					$json_error = array('success' => 'success', 'successVlr' => 'Usuario Creado!');
 					$success = json_encode($json_error);
-					setcookie("success", $success, time() + 60, "/");
-					header('location:../views/users/crearUsuario.php');					
+					setcookie("success", $success, time() + 10, "/");
+					header('location:../views/users/usuarios.php');					
 				}
 				else{
 					$json_error = array('success' => 'error', 'error' => 'error1');
 					$success = json_encode($json_error);
-					setcookie("success", $success, time() + 60, "/");
-					header('location:../views/users/crearUsuario.php');
+					setcookie("success", $success, time() + 10, "/");
+					header('location:../views/users/usuarios.php');
 				}
 
 			}
 			else{
 				$json_error = array('success' => 'error', 'error' => 'error1');
 				$success = json_encode($json_error);
-				setcookie("success", $success, time() + 60, "/");
-				header('location:../views/users/crearUsuario.php');
+				setcookie("success", $success, time() + 10, "/");
+				header('location:../views/users/usuarios.php');
 			}
 		}
 
@@ -203,6 +203,35 @@
 			}
 			echo json_encode($usuarios);
 		}
+
+		public function leerDataUser($id_user)
+		{
+			$usuarios =  array();
+			$campos = array('*');
+			$field['id'] = $id_user;
+
+			$usuarioBD = usuario::findCustom($campos, $field);
+
+			foreach ($usuarioBD as $obj) {
+			
+				$usuario['usuario'][$obj->id] =
+					array(
+						'tipoIdentificacion' => $obj->tipoIdentificacion,
+						'identificacion' => $obj->identificacion,
+						'nombre'         => $obj->nombre,
+						'apellido'       => $obj->apellido,
+						'tipoUsuario'    => $obj->tipoUsuario,
+						'userName'       => $obj->userName,
+						'password'       => 'sinCambio',
+						'email'       	 => $obj->email,
+						'telFijo'        => $obj->telFijo,
+						'telMovil'       => $obj->telMovil,
+						'estado'         => $obj->estado
+					);
+
+			}
+			echo json_encode($usuario);
+		}		
 	}
 
 	
@@ -239,6 +268,9 @@
 
 		case 'leer':
 				$obj_usuarioController->leerData();
+			break;
+		case 'leerUser':
+				$obj_usuarioController->leerDataUser($_POST['id']);
 			break;
 		case 'login':
 				$obj_usuarioController->loginValidated();

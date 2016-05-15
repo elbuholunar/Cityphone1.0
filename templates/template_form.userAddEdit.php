@@ -1,4 +1,4 @@
-<form action="../../controllers/UsuarioController.php" class="form-horizontal" method="POST">
+<form action="../../controllers/UsuarioController.php" class="form-horizontal" method="POST" id="form_editAdd_user"> 
   <div class="form-group">            
       <label for="tpoIde" id="tpoIdeLabel" class="changeLanguages col-sm-2">Tipo Identificación:</label>
       <div class="col-sm-10">
@@ -71,7 +71,8 @@
       </div>       
   </div>
   <div class="col-sm-12">        
-      <input type="hidden" name="event" id="event" value='{"action":"crear"}' class="form-control"/>
+      <input type="hidden" name="event" id="event" value='' class="form-control"/>
       <input type="submit" value="Crear Usuario" id="btnCrear" class="btn btn-primary pull-right changeLanguages" />     
   </div>
 </form>
+<br><br>
