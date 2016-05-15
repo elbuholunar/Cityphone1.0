@@ -68,6 +68,7 @@
                                 'message'=> htmlentities($msg),
                                 'error number'=>$num
         ));
+        http_response_code($num);
     }
 	
  ?>
