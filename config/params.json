@@ -1,4 +1,4 @@
-{
+﻿{
   "languages": {
     "Spanish": {
       "buttons": {
@@ -22,7 +22,51 @@
         "btnLogin":"Ingresar"
       }
     },
+    "Spanish-co": {
+      "buttons": {
+        "sesion": "Iniciar Sesión",
+        "about": "Quienes Somos?",
+        "ContactUs": "Contactenos",
+        "search": "Termino a Buscar",
+        "buttonSearch": "Buscar",
+        "logOut": "Cerrar Sesión",
+        "Configurations": "Configuración",
+        "title":"SISTEMA DE CITOFONIA VIRTUAL",
+        "subtitle":"Con el Respaldo de Estecnología",
+        "createUser":"Nuevo usuario",
+        "showUsers":"Ver usuarios",
+        "updateUser":"Modificar Usuarios",
+        "deleteUser":"Eliminar Usuario",
+        "usernameLabel":"Nombre Usuario:",
+        "username":"Nombre de Usuario",
+        "passwordLabel":"Contraseña:",
+        "password":"Contraseña",
+        "btnLogin":"Ingresar"
+      }
+    },
     "English": {
+      "buttons": {
+        "sesion": "Login",
+        "about": "about us?",
+        "ContactUs": "Contact Us",
+        "search": "Search",
+        "buttonSearch": "Search",
+        "logOut": "logout",
+        "Configurations": "Configuration",
+        "title":"INTERNAL PHONE SYSTEM VIRTUAL",
+        "subtitle":"Backed by Estecnología",
+        "createUser":"New User",
+        "showUsers":"Show user",
+        "updateUser":"User Update",
+        "deleteUser":"Delete User",
+        "usernameLabel":"Username:",
+        "username":"Username",
+        "passwordLabel":"Password:",
+        "password":"Password",
+        "btnLogin":"Login"
+      }
+    },
+    "English-br": {
       "buttons": {
         "sesion": "Login",
         "about": "about us?",
@@ -69,13 +113,21 @@
   },
     "Errors":{
     	"Spanish":{
-    		"error1":"el suario no esta registrado!",
+    		"error1":"el usuario no se encuentra registrado!",
     		"error2":"El nombre de usuario y contraseña no coinciden!"
     	},
+        "Spanish-co":{
+            "error1":"el usuario no esta registrado!",
+            "error2":"El nombre de usuario y contraseña no coinciden!"
+        },
     	"English":{
-    		"error1":"the ser Unrecorded this!",
+    		"error1":"the user Unrecorded this!",
     		"error2":"The username and password do not match !"
     	},
+        "English-br":{
+            "error1":"the user Unrecorded this!",
+            "error2":"The username and password do not match !"
+        },
     	"French":{
     		"error1":"le ser Unrecorded cela!",
     		"error2":"Le nom d'utilisateur et mot de passe ne correspondent pas !"

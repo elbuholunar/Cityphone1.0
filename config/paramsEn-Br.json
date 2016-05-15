@@ -1,4 +1,4 @@
-{
+﻿{
     "buttons": {
         "sesion": "Login",
         "about": "about us?",
@@ -36,7 +36,7 @@
         "estadoLabel":"State User:",
         "estado":"State User",
         "btnCrear":"Create User",
-        "tpoIdeLabel":"type identification:",
+        "tpoIdeLabel":"type identification::",
         "IdeLabel":"identification:",
         "Ide":"Identification",
         "optIdent0":"Select",

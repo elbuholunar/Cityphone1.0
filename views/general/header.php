@@ -42,18 +42,18 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
       	<li class="dropdown">         
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Spain.png" class="btn-languages2" alt="es-co"></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Spain.png" class="btn-languages2" alt="es"></a>
           <ul class="dropdown-menu dropdownLan">            
-            <li><a href="#" class="linkLan"><img src="../../resources/images/Spain.png" class="btn-languages" alt="es-co"></a></li>
+            <li><a href="#" class="linkLan"><img src="../../resources/images/Spain.png" class="btn-languages" alt="es-es"></a></li>
             <li><a href="#" class="linkLan"><img src="../../resources/images/Colombia.png" class="btn-languages" alt="es-co"></a></li>
           </ul>
         </li>  
         
         <li class="dropdown">         
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Usa.png" class="btn-languages2" alt="en-us"></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Usa.png" class="btn-languages2" alt="en"></a>
           <ul class="dropdown-menu dropdownLan">            
             <li><a href="#" class="linkLan"><img src="../../resources/images/Usa.png" class="btn-languages" alt="en-us"></a></li>
-            <li><a href="#" class="linkLan"><img src="../../resources/images/Britain.png" class="btn-languages" alt="en-us"></a></li>
+            <li><a href="#" class="linkLan"><img src="../../resources/images/Britain.png" class="btn-languages" alt="en-br"></a></li>
           </ul>
         </li> 
          
@@ -122,18 +122,18 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">         
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Spain.png" class="btn-languages2" alt="es-co"></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Spain.png" class="btn-languages2" alt="es"></a>
           <ul class="dropdown-menu dropdownLan">            
-            <li><a href="#" class="linkLan"><img src="../../resources/images/Spain.png" class="btn-languages" alt="es-co"></a></li>
+            <li><a href="#" class="linkLan"><img src="../../resources/images/Spain.png" class="btn-languages" alt="es-es"></a></li>
             <li><a href="#" class="linkLan"><img src="../../resources/images/Colombia.png" class="btn-languages" alt="es-co"></a></li>
           </ul>
         </li>  
         
         <li class="dropdown">         
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Usa.png" class="btn-languages2" alt="en-us"></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="../../resources/images/Usa.png" class="btn-languages2" alt="en"></a>
           <ul class="dropdown-menu dropdownLan">            
             <li><a href="#" class="linkLan"><img src="../../resources/images/Usa.png" class="btn-languages" alt="en-us"></a></li>
-            <li><a href="#" class="linkLan"><img src="../../resources/images/Britain.png" class="btn-languages" alt="en-us"></a></li>
+            <li><a href="#" class="linkLan"><img src="../../resources/images/Britain.png" class="btn-languages" alt="en-br"></a></li>
           </ul>
         </li> 
          

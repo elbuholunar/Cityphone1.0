@@ -1,7 +1,6 @@
 		var languages = [];
 		
-		function changeLanguages(len){	
-
+		function changeLanguages(len){					
 				switch(len) {
 					    case "Spanish":
 					        $.getJSON("../../config/paramsEs.json", function(datos) {  
@@ -9,8 +8,20 @@
 				            	changeLan();
 				            });
 					        break;
+					    case "Spanish-co":
+					        $.getJSON("../../config/paramsEs-co.json", function(datos) {  
+				            	languages = datos; 
+				            	changeLan();
+				            });
+					        break;
 					    case "English":
 					        $.getJSON("../../config/paramsEn.json", function(datos) {  
+				            	languages = datos; 
+				            	changeLan();
+				            });
+					        break;
+					    case "English-br":
+					        $.getJSON("../../config/paramsEn-br.json", function(datos) {  
 				            	languages = datos; 
 				            	changeLan();
 				            });
@@ -54,7 +65,7 @@
             			}
 					}  		
             }else{ 
-				    var len = "Spanish";
+				    var len = "Spanish-co";
             }  
             //console.log("en leer json.. " + len);
             changeLanguages(len); 
@@ -65,10 +76,14 @@
 			$(".btn-languages").click(function lenguage(){				
 				var button = this.alt;
 				var len = ""
-				if(button == "es-co"){
+				if(button == "es-es"){
 					len = "Spanish"					
+				}else if(button == "es-co"){
+					len = "Spanish-co"
 				}else if(button == "en-us"){
 					len = "English"
+				}else if(button == "en-br"){
+					len = "English-br"
 				}else{
 					len = "French"
 				}
