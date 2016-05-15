@@ -71,7 +71,6 @@
 	</div>
 </header>
 <div class="general-content">
-	
 </div>
 
 
@@ -110,11 +109,10 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><font id="Configurations" class="changeLanguages">Dropdown</font> <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="crearUsuario.php"><font id="createUser" class="changeLanguages">Action</font></a></li>
-            <li><a href="#"><font id="updateUser" class="changeLanguages">Another action</font></a></li>
-            <li><a href="#"><font id="showUsers" class="changeLanguages">Something else here</font></a></li>
+            <li><a href="javaScript:objActAdmon.createUser()"><font id="createUser" class="changeLanguages">Action</font></a></li>
+            <li><a href="javaScript:void(0)"><font id="showUsers" class="changeLanguages">Something else here</font></a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><font id="deleteUser" class="changeLanguages">Separated link</font></a></li>
+            <li><a href="javaScript:void(0)"><font id="configsUsers" class="changeLanguages">Separated link</font></a></li>
           </ul>
         </li>
       </ul>

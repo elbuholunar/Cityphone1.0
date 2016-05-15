@@ -28,7 +28,7 @@ class Simple_sessions{
 	private $login_page;	
 	
 	
-	public function  __construct( $sess_name = 'simple_sessions', $_timeout = FALSE, $max = 300, $login_page = '/views/general/header.php' ){
+	public function  __construct( $sess_name = 'simple_sessions', $_timeout = FALSE, $max = 300, $login_page = '/cityphone1.0' ){
 
 		session_name( $sess_name );
 		// Start the session

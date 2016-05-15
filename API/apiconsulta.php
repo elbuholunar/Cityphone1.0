@@ -11,6 +11,7 @@
         if(count($parts)>1){
             $subcadena = "/";         
             $posicionsubcadena = strpos ($url, $subcadena);
+
             $par = substr ($url, ($posicionsubcadena+1)); 
             $parParams = explode("/",$par);            
             for($i = 0; $i < count($parParams); $i++ ){
@@ -26,6 +27,7 @@
             $metod($params);
         }   
         
+
     }
 
 

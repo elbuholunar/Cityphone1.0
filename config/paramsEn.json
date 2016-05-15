@@ -13,6 +13,7 @@
         "showUsers":"Show user",
         "updateUser":"User Update",
         "deleteUser":"Delete User",
+        "configsUsers":"configuration",
         "usernameLabel":"Username:",
         "username":"Username",
         "passwordLabel":"Password:",
