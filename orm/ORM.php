@@ -58,10 +58,10 @@ class ORM {
             }
         }
         $columns = array_keys($filtered);
-        if ($this->id) {
+        if (!empty($values['id'])) {
             $columns = join(" = ?, ", $columns);
             $columns.= ' = ?';
-            $query = "UPDATE " . static ::$table . " SET $columns WHERE id =" . $this->id;
+            $query = "UPDATE " . static ::$table . " SET $columns WHERE id =" . $values['id'];
         } else {
             $params = join(", ", array_fill(0, count($columns), "?"));
             $columns = join(", ", $columns);
