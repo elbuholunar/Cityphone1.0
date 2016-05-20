@@ -82,7 +82,7 @@
 			return false;
 		}
 		public function crearUsuario($data_modelo){
-			$this->save($data_modelo);
+			return $this->save($data_modelo);
 		}
 		public function actualizarUsuario(){
 			return true;
