@@ -17,8 +17,8 @@
         "deleteUser":"Eliminar Usuario",
         "usernameLabel":"Nombre Usuario:",
         "username":"Nombre de Usuario",
-        "passwordLabel":"Contraseña:",
-        "password":"Contraseña",
+        "passwordLabel":"Clave:",
+        "password":"Clave",
         "btnLogin":"Ingresar"
       }
     },
@@ -113,19 +113,19 @@
   },
     "Errors":{
     	"Spanish":{
-    		"error1":"el usuario no se encuentra registrado!",
-    		"error2":"El nombre de usuario y contraseña no coinciden!"
+    		"error1":"El usuario no se encuentra registrado!",
+    		"error2":"El nombre de usuario y clave no coinciden!"
     	},
         "Spanish-co":{
-            "error1":"el usuario no esta registrado!",
+            "error1":"El usuario no esta registrado!",
             "error2":"El nombre de usuario y contraseña no coinciden!"
         },
     	"English":{
-    		"error1":"the user Unrecorded this!",
+    		"error1":"The user Unrecorded this!",
     		"error2":"The username and password do not match !"
     	},
         "English-br":{
-            "error1":"the user Unrecorded this!",
+            "error1":"The user Unrecorded this!",
             "error2":"The username and password do not match !"
         },
     	"French":{
