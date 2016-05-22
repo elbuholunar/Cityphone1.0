@@ -1,123 +1,100 @@
 ﻿{
-    "languages": {
-        "Spanish": {
-            "buttons": {
-            "sesion": "Iniciar Sesión",
-            "about": "Quienes Somos?",
-            "ContactUs": "Contactenos",
-            "search": "Termino a Buscar",
-            "buttonSearch": "Buscar",
-            "logOut": "Cerrar Sesión",
-            "Configurations": "Configuración",
-            "title":"SISTEMA DE CITOFONIA VIRTUAL",
-            "subtitle":"Con el Respaldo de Estecnología",
-            "createUser":"Nuevo usuario",
-            "showUsers":"Ver usuarios",
-            "updateUser":"Modificar Usuarios",
-            "deleteUser":"Eliminar Usuario",
-            "usernameLabel":"Nombre Usuario:",
-            "username":"Nombre de Usuario",
-            "passwordLabel":"Contraseña:",
-            "password":"Contraseña",
-            "btnLogin":"Ingresar"
-            }
-        },
-        "Spanish-co": {
-            "buttons": {
-            "sesion": "Iniciar Sesión",
-            "about": "Quienes Somos?",
-            "ContactUs": "Contactenos",
-            "search": "Termino a Buscar",
-            "buttonSearch": "Buscar",
-            "logOut": "Cerrar Sesión",
-            "Configurations": "Configuración",
-            "title":"SISTEMA DE CITOFONIA VIRTUAL",
-            "subtitle":"Con el Respaldo de Estecnología",
-            "createUser":"Nuevo usuario",
-            "showUsers":"Ver usuarios",
-            "updateUser":"Modificar Usuarios",
-            "deleteUser":"Eliminar Usuario",
-            "usernameLabel":"Nombre Usuario:",
-            "username":"Nombre de Usuario",
-            "passwordLabel":"Contraseña:",
-            "password":"Contraseña",
-            "btnLogin":"Ingresar"
-            }
-        },
-        "English": {
-            "buttons": {
-            "sesion": "Login",
-            "about": "about us?",
-            "ContactUs": "Contact Us",
-            "search": "Search",
-            "buttonSearch": "Search",
-            "logOut": "logout",
-            "Configurations": "Configuration",
-            "title":"INTERNAL PHONE SYSTEM VIRTUAL",
-            "subtitle":"Backed by Estecnología",
-            "createUser":"New User",
-            "showUsers":"Show user",
-            "updateUser":"User Update",
-            "deleteUser":"Delete User",
-            "usernameLabel":"Username:",
-            "username":"Username",
-            "passwordLabel":"Password:",
-            "password":"Password",
-            "btnLogin":"Login"
-            }
-        },
-        "English-br": {
-            "buttons": {
-            "sesion": "Login",
-            "about": "about us?",
-            "ContactUs": "Contact Us",
-            "search": "Search",
-            "buttonSearch": "Search",
-            "logOut": "logout",
-            "Configurations": "Configuration",
-            "title":"INTERNAL PHONE SYSTEM VIRTUAL",
-            "subtitle":"Backed by Estecnología",
-            "createUser":"New User",
-            "showUsers":"Show user",
-            "updateUser":"User Update",
-            "deleteUser":"Delete User",
-            "usernameLabel":"Username:",
-            "username":"Username",
-            "passwordLabel":"Password:",
-            "password":"Password",
-            "btnLogin":"Login"
-            }
-        },
-        "French": {
-            "buttons": {
-            "sesion": "Identifier",
-            "about": "Qui sommes nous?",
-            "ContactUs": "Contact",
-            "search": "Je termine à la recherche",
-            "buttonSearch": "Recherche",
-            "logOut": "Se déconnecter",
-            "Configurations": "Configuration",
-            "title":"TÉLÉPHONE INTERNE VIRTUELLE",
-            "subtitle":"Soutenu par Estecnología",
-            "createUser":"Nouvel utilisateur",
-            "showUsers":"Afficher les utilisateurs",
-            "updateUser":"Mise à jour de l'utilisateur",
-            "deleteUser":"supprimer l'utilisateur",
-            "usernameLabel":"Nom d'utilisateur:",
-            "username":"Nom d'utilisateur",
-            "passwordLabel":"mot de passe:",
-            "password":"mot de passe",
-            "btnLogin":"s'identifier"
-            }
-        }
+  "languages": {
+    "Spanish": {
+      "buttons": {
+        "sesion": "Iniciar Sesión",
+        "about": "Quienes Somos?",
+        "ContactUs": "Contactenos",
+        "search": "Termino a Buscar",
+        "buttonSearch": "Buscar",
+        "logOut": "Cerrar Sesión",
+        "Configurations": "Configuración",
+        "title":"SISTEMA DE CITOFONIA VIRTUAL",
+        "subtitle":"Con el Respaldo de Estecnología",
+        "createUser":"Nuevo usuario",
+        "showUsers":"Ver usuarios",
+        "updateUser":"Modificar Usuarios",
+        "deleteUser":"Eliminar Usuario",
+        "usernameLabel":"Nombre Usuario:",
+        "username":"Nombre de Usuario",
+        "passwordLabel":"Clave:",
+        "password":"Clave",
+        "btnLogin":"Ingresar"
+      }
+    },
+    "Spanish-co": {
+      "buttons": {
+        "sesion": "Iniciar Sesión",
+        "about": "Quienes Somos?",
+        "ContactUs": "Contactenos",
+        "search": "Termino a Buscar",
+        "buttonSearch": "Buscar",
+        "logOut": "Cerrar Sesión",
+        "Configurations": "Configuración",
+        "title":"SISTEMA DE CITOFONIA VIRTUAL",
+        "subtitle":"Con el Respaldo de Estecnología",
+        "createUser":"Nuevo usuario",
+        "showUsers":"Ver usuarios",
+        "updateUser":"Modificar Usuarios",
+        "deleteUser":"Eliminar Usuario",
+        "usernameLabel":"Nombre Usuario:",
+        "username":"Nombre de Usuario",
+        "passwordLabel":"Contraseña:",
+        "password":"Contraseña",
+        "btnLogin":"Ingresar"
+      }
+    },
+    "English": {
+      "buttons": {
+        "sesion": "Login",
+        "about": "about us?",
+        "ContactUs": "Contact Us",
+        "search": "Search",
+        "buttonSearch": "Search",
+        "logOut": "logout",
+        "Configurations": "Configuration",
+        "title":"INTERNAL PHONE SYSTEM VIRTUAL",
+        "subtitle":"Backed by Estecnología",
+        "createUser":"New User",
+        "showUsers":"Show user",
+        "updateUser":"User Update",
+        "deleteUser":"Delete User",
+        "usernameLabel":"Username:",
+        "username":"Username",
+        "passwordLabel":"Password:",
+        "password":"Password",
+        "btnLogin":"Login"
+      }
+    },
+    "English-br": {
+      "buttons": {
+        "sesion": "Login",
+        "about": "about us?",
+        "ContactUs": "Contact Us",
+        "search": "Search",
+        "buttonSearch": "Search",
+        "logOut": "logout",
+        "Configurations": "Configuration",
+        "title":"INTERNAL PHONE SYSTEM VIRTUAL",
+        "subtitle":"Backed by Estecnología",
+        "createUser":"New User",
+        "showUsers":"Show user",
+        "updateUser":"User Update",
+        "deleteUser":"Delete User",
+        "usernameLabel":"Username:",
+        "username":"Username",
+        "passwordLabel":"Password:",
+        "password":"Password",
+        "btnLogin":"Login"
+      }
     },
     "Errors":{
-        "Spanish":{
-            "error1":"el usuario no se encuentra registrado!",
-            "error2":"El nombre de usuario y contraseña no coinciden!"
-        },
+    	"Spanish":{
+    		"error1":"El usuario no se encuentra registrado!",
+    		"error2":"El nombre de usuario y clave no coinciden!"
+    	},
         "Spanish-co":{
-            "error1":"el usuario no esta registrado!",
+            "error1":"El usuario no esta registrado!",
             "error2":"El nombre de usuario y contraseña no coinciden!"
         },
         "English":{
@@ -125,7 +102,7 @@
             "error2":"The username and password do not match !"
         },
         "English-br":{
-            "error1":"the user Unrecorded this!",
+            "error1":"The user Unrecorded this!",
             "error2":"The username and password do not match !"
         },
         "French":{
