@@ -67,9 +67,11 @@ class ORM {
             $columns = join(", ", $columns);
             $query = "INSERT INTO " . static ::$table . " ($columns) VALUES ($params)";
         }
+        
         $result = self::$database->execute($query, null, $filtered);
         if ($result) {
-            $result = array('error' => false, 'message' => self::$database->getInsertedID());
+            $message=(!empty($values['id']))? self::$database->numRows($result) : self::$database->getInsertedID();
+            $result = array('error' => false, 'message' => $message);
         } else {
             $result = array('error' => true, 'message' => self::$database->getError());
         }
@@ -98,6 +100,17 @@ class ORM {
             }
         }
         return $obj;
+    }
+    public function delete($campo='', $value)
+    {
+        $query = 'DELETE  FROM '.static ::$table . ' WHERE '.$campo.' = ?';
+        $result = self::$database->execute($query, null, array($value));
+        if ($result) {
+            $result = array('error' => false, 'message' => self::$database->numRows($result));
+        } else {
+            $result = array('error' => true, 'message' => self::$database->getError());
+        }
+        return $result;   
     }
 }
 ?>

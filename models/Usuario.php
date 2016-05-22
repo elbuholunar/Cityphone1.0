@@ -84,11 +84,11 @@
 		public function crearUsuario($data_modelo){
 			return $this->save($data_modelo);
 		}
-		public function actualizarUsuario(){
-			return true;
+		public function editarUsuario($data_modelo){
+			return $this->save($data_modelo);
 		}
 		public function eliminarUsuario(){
-			return true;
+			return $this->delete('id', $this->id);
 		}
 		public function __set($propiedad,$valor) {
 		        $this->$propiedad=$valor;

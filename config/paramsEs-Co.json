@@ -59,7 +59,8 @@
         "headListUser4":"Estado",
         "headListUser5":"Acciones",
         "fontEditUser":"Editar",
-        "fontDeltUser":"Eliminar"
-
+        "fontDeltUser":"Eliminar",
+        "LinkDelUser":"Eliminar Usuario",
+        "identificacionDel":"con número de identificación"
     }
 }

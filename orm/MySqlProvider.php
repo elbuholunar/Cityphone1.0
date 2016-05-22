@@ -30,7 +30,7 @@ class MySqlProvider extends DatabaseProvider {
         $num_rows = 0;
 
         if ($resource) {
-            @$num_rows = $resource->num_rows;
+            $num_rows = $this->resource->affected_rows;
         }
         return $num_rows;
     }

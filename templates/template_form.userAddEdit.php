@@ -71,8 +71,9 @@
       </div>       
   </div>
   <div class="col-sm-12">        
-      <input type="hidden" name="event" id="event" value='' class="form-control"/>
-      <input type="submit" value="Crear Usuario" id="btnCrear" class="btn btn-primary pull-right changeLanguages" />     
+      <input type="hidden" name="event" id="event" value=''/>
+      <input type="hidden" name="id" id="id_user" value=''/>
+      <input type="submit" value="Crear Usuario" id="btnCrear" class="btn btn-primary pull-right changeLanguages" />
   </div>
 </form>
 <br><br>

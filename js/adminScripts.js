@@ -10,6 +10,8 @@ function Actions_Admon() {
 		
         $.post("../../controllers/UsuarioController.php",{event:'{"action":"leerUser"}',id: id_user}, function(data, status){
 
+          $("#id_user").val(id_user);
+
           $.each(data['usuario'], function(obj, subObj){
 
           		$("input[name=identificacion]").val(subObj.identificacion);
@@ -27,22 +29,30 @@ function Actions_Admon() {
 
         },"json");			
 
-		$('#event').val('{"action":"editar"}');
-		$('#ModalForm').modal();
+		    $('#event').val('{"action":"editar"}');
+		    $('#ModalForm').modal();
 	};
 
-	this.delUser = function(id_user){
-		
-		if (confirm('Esta seguro de eliminar el usuario!')) {
-
-		}
+	this.delUser = function(id_user,ident_user, confirmar){
+		  
+      if (confirmar == 'si') {
+        $('#event').val('{"action":"eliminar"}');
+        $("#id_user").val(id_user);
+        $("#form_editAdd_user").submit();
+      }
+      else{
+        var FunctionDelUser = "javaScript:objActAdmon.delUser(" + id_user + ",0,'si');"
+        $("#LinkDelUser").prop('href', FunctionDelUser);
+        $("#identUserDel").html(ident_user);
+        $("#eraserDiv").removeClass('hidden');
+      }
 	};
 
 	this.cargue_doc = function(){
         $.post("../../controllers/UsuarioController.php",{event:'{"action":"leer"}'}, function(data, status){
 
+
           $('#dataUsers tr').remove();
-          
           $.each(data['usuarios'], function(obj, subObj){
             span = '<span class="glyphicon glyphicon-edit"></span>';
             font = '<font class="changeLanguages" id="fontEditUser">Editar</font>';
@@ -54,7 +64,7 @@ function Actions_Admon() {
             font = '<font class="changeLanguages" id="fontDeltUser">Eliminar</font>';
             
             btn_del  = '<button type="button" class="btn btn-danger" id="btnDelUser" ';
-            btn_del  += 'onclick="objActAdmon.delUser('+ obj +')"' + '> ' + font + '&nbsp;' + span +'</button>';
+            btn_del  += 'onclick="objActAdmon.delUser('+ obj +', ' + subObj['identificacion'] + ', 0)"' + '> ' + font + '&nbsp;' + span +'</button>';
 
             body_tr = '<tr>';
             body_tr += '<td>' + subObj['identificacion'] + '</td>';
@@ -68,6 +78,7 @@ function Actions_Admon() {
           });
         },"json");		
 	};
+
 }
 
 var objActAdmon = new Actions_Admon();

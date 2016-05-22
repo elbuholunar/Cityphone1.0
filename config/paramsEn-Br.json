@@ -59,6 +59,8 @@
         "headListUser4":"State",
         "headListUser5":"Actions",
         "fontEditUser":"Edit",
-        "fontDeltUser":"Del"
+        "fontDeltUser":"Del",
+        "LinkDelUser":"Delete User",
+        "identificacionDel":"whit number identification"
     }
 }

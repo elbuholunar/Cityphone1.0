@@ -10,6 +10,7 @@
 	{ 
 		private $_objCrypt;
 		private $_objUsuario;
+		private $_id;
 		private $_tipoIdentificacion;
 		private $_identificacion;
 		private $_nombre;
@@ -22,10 +23,11 @@
 		private $_telMovil;
 		private $_estado;
 		
-		function __construct($tipoIdentificacion,$identificacion,$nombre,$apellido,$tipoUsuario,$userName,$password,$email,$telFijo,$telMovil,$estado)
+		function __construct($id,$tipoIdentificacion,$identificacion,$nombre,$apellido,$tipoUsuario,$userName,$password,$email,$telFijo,$telMovil,$estado)
 		{
 			$this->_objCrypt 			= new proCrypt();
 			$this->_objUsuario 			= new Usuario(null);
+		    $this->_id  				= $id;
 		    $this->_tipoIdentificacion  = $tipoIdentificacion;
 		    $this->_identificacion 		= $identificacion;
 		    $this->_nombre         		= $nombre;
@@ -148,7 +150,6 @@
 					setcookie("success", $success, time() + 10, "/");
 					header('location:../views/users/usuarios.php');
 				}
-
 			}
 			else{
 				$json_error = array('success' => 'error', 'error' => 'error1');
@@ -182,6 +183,7 @@
 
 			$usuariosBD = usuario::all();
 
+
 			foreach ($usuariosBD as $obj) {
 				
 				if ($obj->estado == 1) $estado = 'En espera';
@@ -201,6 +203,7 @@
 					);
 
 			}
+
 			echo json_encode($usuarios);
 		}
 
@@ -231,13 +234,105 @@
 
 			}
 			echo json_encode($usuario);
-		}		
-	}
+		}
 
-	
+		public function editarDataUser()
+		{
+
+			if(
+				$this->validData('camposNull',$this->_tipoIdentificacion) && 
+				$this->validData('camposNull',$this->_identificacion) &&
+				$this->validData('camposNull',$this->_nombre) &&
+				$this->validData('camposNull',$this->_apellido) &&
+				$this->validData('camposNull',$this->_telFijo) &&
+				$this->validData('camposNull',$this->_telMovil) &&
+				$this->validData('camposNull',$this->_email) &&
+				$this->validData('camposNull',$this->_tipoUsuario) &&
+				$this->validData('camposNull',$this->_estado)
+			){
+				if (
+					$this->validData('numerica',$this->_identificacion) &&
+					$this->validData('numerica',$this->_telFijo) &&
+					$this->validData('numerica',$this->_telMovil)
+				) {
+					if ($this->validData('email', $this->_email) != false) {
+						$flag = true;
+					}else{
+						# Data sin formato email
+						$flag = false;
+					}
+				}else{
+					# Data con caracteres alfa-numericos
+					$flag = false;
+				}
+			}else{
+				# Data vacia
+				$flag = false;
+			}
+
+			# REPUESTA SEGUN SEA EL CASO
+			if ($flag) {
+				$data_modelo['id'] 				   = $this->_id;
+				$data_modelo['tipoIdentificacion'] = $this->_tipoIdentificacion;
+				$data_modelo['identificacion']     = $this->_identificacion;
+				$data_modelo['nombre']     		   = $this->_nombre;
+				$data_modelo['apellido']     	   = $this->_apellido;
+				$data_modelo['telFijo']     	   = $this->_telFijo;
+				$data_modelo['telMovil']     	   = $this->_telMovil;
+				$data_modelo['email']     	       = $this->_email;
+				$data_modelo['tipoUsuario']        = $this->_tipoUsuario;
+				$data_modelo['userName']           = $this->_userName;
+				if (!empty($this->_password))
+					$data_modelo['password']	   = $this->_objCrypt->encrypt($this->_password);
+				
+				$data_modelo['estado']        	   = $this->_estado;
+
+				$edicion = $this->_objUsuario->editarUsuario($data_modelo);
+
+				if (!$edicion['error']) {
+					$json_error = array('success' => 'success', 'successVlr' => 'Usuario Modificado!');
+					$success = json_encode($json_error);
+					setcookie("success", $success, time() + 10, "/");
+					header('location:../views/users/usuarios.php');					
+				}
+				else{
+					$json_error = array('success' => 'error', 'error' => 'Usuario No Modificado, intentelo nuevamente!');
+					$success = json_encode($json_error);
+					setcookie("success", $success, time() + 10, "/");
+					header('location:../views/users/usuarios.php');
+				}
+			}
+			else{
+				$json_error = array('success' => 'error', 'error' => 'error1');
+				$success = json_encode($json_error);
+				setcookie("success", $success, time() + 10, "/");
+				header('location:../views/users/usuarios.php');
+			}
+		}
+
+		public function eliminarDataUser()
+		{
+			$this->_objUsuario->id = $this->_id;
+			$eliminacion = $this->_objUsuario->eliminarUsuario();
+
+			if (!$eliminacion['error']) {
+				$json_error = array('success' => 'success', 'successVlr' => 'Usuario Eliminado!');
+				$success = json_encode($json_error);
+				setcookie("success", $success, time() + 10, "/");
+				header('location:../views/users/usuarios.php');					
+			}
+			else{
+				$json_error = array('success' => 'error', 'error' => 'Usuario No Eliminado, intentelo nuevamente!');
+				$success = json_encode($json_error);
+				setcookie("success", $success, time() + 10, "/");
+				header('location:../views/users/usuarios.php');
+			}			
+		}
+	}
 
 	@$obj_usuarioController = 
 		new usuarioController(
+				$_POST['id'],
 				$_POST['tipoIdentificacion'],
 				$_POST['identificacion'],
 				$_POST['nombre'],
@@ -258,12 +353,12 @@
 			$obj_usuarioController->crearUsuario();
 			break;
 		
-		case 'actualizar':
-			# code...
+		case 'editar':
+			$obj_usuarioController->editarDataUser();
 			break;
 
 		case 'eliminar':
-			# code...
+			$obj_usuarioController->eliminarDataUser();
 			break;
 
 		case 'leer':

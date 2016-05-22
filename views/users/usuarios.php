@@ -36,6 +36,19 @@
       <div role="tabpanel" class="tab-pane fade fade active in" id="profile" aria-labelledby="profile-tab">
         <br>
         <div class="well">
+          <div id="eraserDiv" class="hidden">
+            <div class="alert alert-warning alert-dismissible fade in" role="alert">
+              <span class="glyphicon glyphicon-hand-up"></span>
+              <a href="#" class="alert-link" id="">
+                <font id="LinkDelUser" class="changeLanguages">Eliminar usuario!</font>
+              </a> 
+              <font class="changeLanguages" id="identificacionDel">con número de identificación</font> 
+              <em><font id="identUserDel"></font></em>
+              <button type="button" class="close" onclick="$('#eraserDiv').addClass('hidden')">
+                <span aria-hidden="true">&times;</span>
+              </button>              
+            </div>            
+          </div> 
           <table class="table table-hover table-bordered">
             <thead>
               <tr class="text-primary">

@@ -26,4 +26,4 @@ $print_error = $success;
   $('#divSuccess').modal('show');
 </script>
 
-<?php  setcookie('success', null, -1, '/'); ?>
+<?php  @setcookie('success', null, -1, '/'); ?>

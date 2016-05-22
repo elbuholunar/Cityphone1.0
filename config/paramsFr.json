@@ -59,6 +59,8 @@
         "headListUser4":"Etat",
         "headListUser5":"Actes",
         "fontEditUser":"Modifier",
-        "fontDeltUser":"Supprimer"
+        "fontDeltUser":"Supprimer",
+        "LinkDelUser":"supprimer l'utilisateur",
+        "identificacionDel":"identification du numéro de Pentecôte"
     }
 }

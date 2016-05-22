@@ -100,6 +100,13 @@ class Database {
     public function getInsertedID() {
         return $this->provider->getInsertedID();
     }
+    public function numRows($resource) {
+        $num_rows = 0;
+        if ($resource) {
+            $num_rows = $this->provider->numRows($resource);
+        }
+        return $num_rows;
+    }    
     public function getError() {
         return $this->provider->getError();
     }

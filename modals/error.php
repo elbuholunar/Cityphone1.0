@@ -3,6 +3,7 @@ $archParms = file_get_contents("../../config/params.json");
 $lenguajes = json_decode($archParms, true);
 $captura_error = json_decode($_COOKIE['success']);
 $error = $captura_error->error;
+
 $print_error = $lenguajes['Errors'][$_COOKIE['lan']][$error];
 ?>
 
@@ -26,4 +27,4 @@ $print_error = $lenguajes['Errors'][$_COOKIE['lan']][$error];
   $('#divErrors').modal('show');
 </script>
 
-<?php  setcookie('success', null, -1, '/'); ?>
+<?php  @setcookie('success', null, -1, '/'); ?>
