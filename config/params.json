@@ -10,7 +10,7 @@
         "logOut": "Cerrar Sesión",
         "Configurations": "Configuración",
         "title":"SISTEMA DE CITOFONIA VIRTUAL",
-        "subtitle":"Con el Respaldo de Estecnología",
+        "subtitle":"Con el Respaldo de Estecnolog&#237;a",
         "createUser":"Nuevo usuario",
         "showUsers":"Ver usuarios",
         "updateUser":"Modificar Usuarios",
@@ -22,7 +22,7 @@
         "btnLogin":"Ingresar"
       }
     },
-    "Spanish-co": {
+    "Spanish-Co": {
       "buttons": {
         "sesion": "Iniciar Sesión",
         "about": "Quienes Somos?",
@@ -32,14 +32,14 @@
         "logOut": "Cerrar Sesión",
         "Configurations": "Configuración",
         "title":"SISTEMA DE CITOFONIA VIRTUAL",
-        "subtitle":"Con el Respaldo de Estecnología",
+        "subtitle":"Con el Respaldo de Estecnolog&#237;a",
         "createUser":"Nuevo usuario",
         "showUsers":"Ver usuarios",
         "updateUser":"Modificar Usuarios",
         "deleteUser":"Eliminar Usuario",
         "usernameLabel":"Nombre Usuario:",
         "username":"Nombre de Usuario",
-        "passwordLabel":"Contraseña:",
+        "passwordLabel":"Contrase&#241;a:",
         "password":"Contraseña",
         "btnLogin":"Ingresar"
       }
@@ -54,7 +54,7 @@
         "logOut": "logout",
         "Configurations": "Configuration",
         "title":"INTERNAL PHONE SYSTEM VIRTUAL",
-        "subtitle":"Backed by Estecnología",
+        "subtitle":"Backed by Estecnolog&#237;a",
         "createUser":"New User",
         "showUsers":"Show user",
         "updateUser":"User Update",
@@ -66,7 +66,7 @@
         "btnLogin":"Login"
       }
     },
-    "English-br": {
+    "English-Br": {
       "buttons": {
         "sesion": "Login",
         "about": "about us?",
@@ -76,7 +76,7 @@
         "logOut": "logout",
         "Configurations": "Configuration",
         "title":"INTERNAL PHONE SYSTEM VIRTUAL",
-        "subtitle":"Backed by Estecnología",
+        "subtitle":"Backed by Estecnolog&#237;a",
         "createUser":"New User",
         "showUsers":"Show user",
         "updateUser":"User Update",
@@ -95,7 +95,7 @@
     	},
         "Spanish-co":{
             "error1":"El usuario no esta registrado!",
-            "error2":"El nombre de usuario y contraseña no coinciden!"
+            "error2":"El nombre de usuario y contrase&#241;a no coinciden!"
         },
         "English":{
             "error1":"the user Unrecorded this!",
@@ -109,5 +109,6 @@
             "error1":"le ser Unrecorded cela!",
             "error2":"Le nom d'utilisateur et mot de passe ne correspondent pas !"
         }    
+    }
     }
 }

@@ -5,4 +5,10 @@ define('DB_USER', 'user800');
 define('DB_PASSWORD', 'passUser800');
 define('DB_DB', 'cityphone');
 
+// Datos de Conexión en el hosting
+//define('DB_HOST', 'fdb7.biz.nf');
+//define('DB_USER', '2124441_cityp');
+//define('DB_PASSWORD', 'passUser800');
+//define('DB_DB', '2124441_cityp');
+
 

@@ -16,21 +16,23 @@
 		
         function lee_json() {			
 			if(document.cookie != ""){
-            		var cookiess = document.cookie.split(';');
-            		for(var index in cookiess) {				
-   						 if( /lan/.test(cookiess[index]) ){
+            	var cookiess = document.cookie.split(';');
+            	for(var index in cookiess) {				
+   					if( /lan/.test(cookiess[index]) ){
             				var cook = cookiess[index].split("=");
             				var len = cook[1]; 
-            			}
-					}  		
-            	}else{             		
-            		var len = "Spanish-co";
-            	}
-            	$.getJSON("../../config/params.json", function(datos) {  
+            		}
+				}  		
+            }else{             		
+            		var len = "Spanish-Co";
+            }
+            console.log(len);
+            $.getJSON("../../config/params.json", function(datos) {  
+            	console.log(datos);
             	languages = datos["languages"];
                	changeLanguages(len);
-            });
-            	//changeLanguages(len);
+           	});
+            //changeLanguages(len);
         }      
 
 		$(function(){			
@@ -40,11 +42,11 @@
 				if(button == "es-es"){
 					len = "Spanish"					
 				}else if(button == "es-co"){
-					len = "Spanish-co"
+					len = "Spanish-Co"
 				}else if(button == "en-us"){
 					len = "English"
 				}else if(button == "en-br"){
-					len = "English-br"
+					len = "English-Br"
 				}else{
 					len = "French"
 				}

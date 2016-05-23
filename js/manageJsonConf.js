@@ -8,8 +8,8 @@
 				            	changeLan();
 				            });
 					        break;
-					    case "Spanish-co":
-					        $.getJSON("../../config/paramsEs-co.json", function(datos) {  
+					    case "Spanish-Co":
+					        $.getJSON("../../config/paramsEs-Co.json", function(datos) {  
 				            	languages = datos; 
 				            	changeLan();
 				            });
@@ -20,8 +20,8 @@
 				            	changeLan();
 				            });
 					        break;
-					    case "English-br":
-					        $.getJSON("../../config/paramsEn-br.json", function(datos) {  
+					    case "English-Br":
+					        $.getJSON("../../config/paramsEn-Br.json", function(datos) {  
 				            	languages = datos; 
 				            	changeLan();
 				            });
@@ -65,7 +65,7 @@
             			}
 					}  		
             }else{ 
-				    var len = "Spanish-co";
+				    var len = "Spanish-Co";
             }  
             //console.log("en leer json.. " + len);
             changeLanguages(len); 
@@ -79,11 +79,11 @@
 				if(button == "es-es"){
 					len = "Spanish"					
 				}else if(button == "es-co"){
-					len = "Spanish-co"
+					len = "Spanish-Co"
 				}else if(button == "en-us"){
 					len = "English"
 				}else if(button == "en-br"){
-					len = "English-br"
+					len = "English-Br"
 				}else{
 					len = "French"
 				}
