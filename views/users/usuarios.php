@@ -18,10 +18,16 @@
 	<link rel="stylesheet" type="text/css" href="../../css/users/principal.css">
 </head>
 <body>
-<?php  
+<?php
+  require_once(dirname(dirname(__DIR__))."/libraries/php/Simple_sessions.php");
+  $obj_Session = new Simple_sessions();
+  $idUser_exists = $obj_Session->check_sess('id_user');
+
+  if (empty($idUser_exists))
+    $obj_Session->destroy_sess(); 
+
   $head = 2;
   require_once("../general/header.php");
-
 ?>
   
 <div class="general-content">

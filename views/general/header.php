@@ -1,5 +1,3 @@
-
-
 <?php if ($head == 1): ?>
   
 
@@ -143,7 +141,7 @@
             <li><a href="#" class="linkLan"><img src="../../resources/images/France.png" class="btn-languages" alt="fr"></a></li>            
           </ul>
         </li>
-        <li><a href="../general/header.php" ><font id="logOut" class="changeLanguages">Link</font></a></li>
+        <li><a href="#" onclick="objActAdmon.cierreSesion()" ><font id="logOut" class="changeLanguages">Link</font></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  ><font id="Configurations" class="changeLanguages">Dropdown</font> <span class="caret"></span></a>
           <ul class="dropdown-menu">

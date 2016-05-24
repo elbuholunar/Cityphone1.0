@@ -78,11 +78,10 @@
 					$data_session['telFijo'] 		= $register[0]->getTelFijo();			
 					$data_session['telMovil'] 		= $register[0]->getTelMovil();			
 					$data_session['estado'] 		= $register[0]->getEstado();
-					$data_session['lan']			= $_COOKIE['lan'];
+					//$data_session['lan']			= $_COOKIE['lan'];
 					
 					$obj_Session = new Simple_sessions();
 					$obj_Session->add_sess($data_session);
-
 					header('location:../views/users/usuarios.php');
 				}
 			}
@@ -328,6 +327,22 @@
 				header('location:../views/users/usuarios.php');
 			}			
 		}
+
+		public function closeSesion()
+		{
+			$obj_Session = new Simple_sessions();
+			$obj_Session->destroy_sess();
+		}
+
+		public static function validSesion()
+		{
+
+		  $obj_Session = new Simple_sessions();
+		  $idUser_exists = $obj_Session->check_sess('id_user');
+		  
+		  if (empty($idUser_exists))
+		    $obj_Session->destroy_sess();
+		}
 	}
 
 	@$obj_usuarioController = 
@@ -350,26 +365,37 @@
 
 	switch ($event->action) {
 		case 'crear':
+
+			$obj_usuarioController->validSesion();
 			$obj_usuarioController->crearUsuario();
 			break;
 		
 		case 'editar':
+			$obj_usuarioController->validSesion();
 			$obj_usuarioController->editarDataUser();
 			break;
 
 		case 'eliminar':
+			$obj_usuarioController->validSesion();
 			$obj_usuarioController->eliminarDataUser();
 			break;
 
 		case 'leer':
-				$obj_usuarioController->leerData();
+			$obj_usuarioController->validSesion();
+			$obj_usuarioController->leerData();
 			break;
 		case 'leerUser':
-				$obj_usuarioController->leerDataUser($_POST['id']);
+			$obj_usuarioController->validSesion();
+			$obj_usuarioController->leerDataUser($_POST['id']);
 			break;
 		case 'login':
-				$obj_usuarioController->loginValidated();
+			$obj_usuarioController->loginValidated();
 			break;
+		case 'cerrarSesion':
+			$obj_usuarioController->validSesion();
+			$obj_usuarioController->closeSesion();
+			break;
+		
 		default:
 
 			break;
@@ -377,4 +403,4 @@
 
 //http://web.ontuts.com/tutoriales/aprendiendo-a-utilizar-la-libreria-curl-en-php/
 //http://www.forosdelweb.com/f18/aporte-file_get_contents-curl-http_request-724214/
- ?>
+?>

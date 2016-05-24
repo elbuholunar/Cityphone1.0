@@ -79,6 +79,10 @@ function Actions_Admon() {
         },"json");		
 	};
 
+  this.cierreSesion = function(){
+      $('#event').val('{"action":"cerrarSesion"}');
+      $("#form_editAdd_user").submit();
+  };
 }
 
 var objActAdmon = new Actions_Admon();
